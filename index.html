@@ -4,19 +4,23 @@
 		<title>Andy and Molly</title>
 		<link rel="icon" type="image/x-icon" href="favicon.png">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> 
 		<script src="main.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<h1 class ="starthidden" id="Hello">Andy & Molly</h1>
-		<image class ="starthidden" src="mollyandandy.jpeg" width=50% />
-		<h1 class ="starthidden">23·07·2023</h1>
+		<div class="bottomborder"> <!-- title -->
+			<h1 class ="starthidden" id="Hello">Andy & Molly</h1>
+			<image class ="starthidden" src="mollyandandy.jpeg" width=50% />
+			<h1 class ="starthidden">23·07·2023</h1>
+		</div>
 		<div class="starthidden mainbody">
-			<div class = "bottomborder">
-				<p>Hi we're Molly and Andy and we're getting married lolz. 23 July 2023. Be there or be square (but do RSVP either way, obviously)<p>
+			<div class = "bottomborder"> <!-- Intro -->
+				<h2>Introduction</h2>
+				<p>Hi we're Molly and Andy and we're getting married lolz. 23 July 2023. That's in <span id="noOfDays">some amount of </span> days. Be there or be square (but do RSVP either way, obviously)<p>
 			</div>
-			<div class = "bottomborder">
+			<div class = "bottomborder"> <!-- Venue -->
 				<h2>Venue</h2>
 				<p>We're getting married at <a href="https://sopleymill.co.uk/" target="_blank">Sopley Mill</a>.</p>
 				<p>The address is:</p>
@@ -30,8 +34,6 @@
 					</div>
 					<div class="mapouter" style="display:inline-block;vertical-align:middle;">
 							<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-							<!--<style>.mapouter{display:inline-block;position:relative;height:100px;width:100px;}</style>
-							<style>.gmap_canvas {overflow:hidden;background:none!important;height:100px;width:100px;}</style>-->
 					</div>
 				</div>
 				<p>See below for some cool snapsnaps</p>
@@ -58,8 +60,12 @@
 					<image class="venueimage" src="https://www.wedinspire.com/wp-content/uploads/2020/03/Screenshot-2020-03-30-at-15.48.12.png"></image>
 				</div>
 			</div>
+			<div class = "bottomborder"> <!-- Accommodation -->
+				<h2>Where to stay</h2>
+				<p>I don't know, find a hotel or something</p>
+			</div>
 			<br>
-			<div class = "bottomborder">
+			<div class = "bottomborder"> <!-- Food -->
 				<h2>Food</h2>
 				<p>All food will be provided by the <a href="http://theperfectpig.co.uk/" target="_blank">Perfect Pig</a></p>
 				<image src="perfectpiglogo.png" width: 25% />
@@ -95,39 +101,40 @@
 				</div>
 				<p>GF - gluten free, Vg - vegan, V - vegetarian</p>
 			</div>
-			<!--<form action="submission.html" method="POST">-->
-			<iframe
-				src="https://docs.google.com/forms/d/e/1FAIpQLSfRww-tzc_-UnwY4P5y7pXY0PtHNuoogAKkoNWFUG4LHowPEw/viewform?embedded=true"
-				width="80%" height="960" frameborder="0" marginheight="0" marginwidth="0">
-				Loading…
-			</iframe>
-			<form action="mailto:andyh555@googlemail.com" method="get" enctype="text/plain">
-				<h1 id="RSVP">RSVP</h1>
-				<p>Enter your details below or let us know by <a href="mailto:andyh555@googlemail.com">email</a></p>
-				<table align="center">
-					<tr>
-						<td><label for="name">What's your name</label></td>
-						<td><input id="name" name="name" type="text"></td>
-					</tr>
-					<tr>
-						<td><label for="attending2">Can you attend?</label></td>
-						<td>
-							<input id="attendingYes" name="attending2" type="radio" value="Yes">
-							<label for="Yes">Yes</label>
-							<input id="attendingNo" name="attending2" type="radio" value="No">
-							<label for="No">No</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label for="diet">Dietary requirements?</label></td>
-						<td><input id="diet" name="diet" type="text"></td>
-					</tr>
-					<tr>
-						<td><label for="comments">Comments</label></td>
-					</tr>
-				</table>
-				<input type="submit">
-			</form>
+			<div class = "bottomborder"> <!-- RSVP -->
+				<iframe
+					src="https://docs.google.com/forms/d/e/1FAIpQLSfRww-tzc_-UnwY4P5y7pXY0PtHNuoogAKkoNWFUG4LHowPEw/viewform?embedded=true"
+					width="80%" height="960" frameborder="0" marginheight="0" marginwidth="0">
+					Loading…
+				</iframe>
+				<!--<form action="submission.html" method="POST">-->
+					<h1 id="RSVP">RSVP</h1>
+					<p>Enter your details below or let us know by <a href="mailto:andyh555@googlemail.com">email</a></p>
+					<table align="center">
+						<tr>
+							<td><label for="name">What's your name</label></td>
+							<td><input id="name" name="name" type="text"></td>
+						</tr>
+						<tr>
+							<td><label for="attending2">Can you attend?</label></td>
+							<td>
+								<input id="attendingYes" name="attending2" type="radio" value="Yes">
+								<label for="Yes">Yes</label>
+								<input id="attendingNo" name="attending2" type="radio" value="No">
+								<label for="No">No</label>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="diet">Dietary requirements?</label></td>
+							<td><input id="diet" name="diet" type="text"></td>
+						</tr>
+						<tr>
+							<td><label for="comments">Comments</label></td>
+						</tr>
+					</table>
+					<input type="submit">
+				</form>
+			</div>
 		</div>
 	</body>
 </html>

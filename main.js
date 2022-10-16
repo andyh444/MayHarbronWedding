@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	setNoOfDays();
+	
 	elementFadeIn($('h1.starthidden'), 0);
 	elementFadeIn($('img.starthidden'), 100);
 	elementFadeIn($('div.starthidden'), 200);
@@ -11,9 +13,9 @@ $(document).ready(function(){
 	$(".venueimagecontainer").mouseleave(function() {
 		imageAnimate($(this),100,0,1);
 	});
-	$(".venueimagecontainer").click(function() {
-		$(this).animate({width: "50%"});
-	});
+	//$(".venueimagecontainer").click(function() {
+	//	$(this).animate({width: "50%"});
+	//});
 });
 
 function imageAnimate(element,imageOpacity,textOpacity,textFontSize) {
@@ -25,4 +27,16 @@ function imageAnimate(element,imageOpacity,textOpacity,textFontSize) {
 
 function elementFadeIn(element, delayMs) {
 	element.delay(delayMs).fadeIn(1000);
+}
+
+function setNoOfDays() {
+	var el = document.getElementById('noOfDays');
+	el.innerHTML = noOfDaysToGo();
+}
+
+function noOfDaysToGo() {
+	var today = new Date();
+	var targetDate = new Date('2023-07-23T00:00:01');
+	var diffInMs = targetDate - today;
+	return Math.ceil(diffInMs / (1000 * 3600 * 24));
 }

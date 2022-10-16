@@ -5,13 +5,13 @@ body {
 }
 
 h1 {
-	font-family: "Lucida Handwriting";
+	font-family: Allura, "Lucida Handwriting",Cursive;
 	font-size: 64px;
 	color: #887694 /* dusty purple */
 }
 
 h2 {
-	font-family: "Lucida Handwriting";
+	font-family: Allura,"Lucida Handwriting",Cursive;
 	font-size: 32px;
 	color: #887694 /* dusty purple */
 }
@@ -49,11 +49,12 @@ td {
 }
 
 .bottomborder {
-	border-bottom-style: solid;
+	border-style: solid;
 	border-width: 1px;
-	border-color: black;
+	border-color: red;
 	margin: 2%;
 	padding: 5%;
+	min-height: 100vh;
 }
 
 .address {
