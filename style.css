@@ -1,0 +1,72 @@
+body {
+  background-color: rgb(255,255,255);
+  font-family: Rubik, Arial;
+  text-align: center;
+}
+
+h1 {
+	font-size: 64px;
+}
+
+.menubox {
+	vertical-align: top;
+	display: inline-block;
+	text-align: left;
+	width: 15%;
+	min-width: 128px;
+}
+
+.starthidden {
+	display: none;
+}
+
+.mainbody {
+	margin: 5%;
+}
+
+.bottomborder {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 2%;
+	padding: 5%;
+}
+
+.address {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-radius: 64px;
+	vertical-align: middle;
+	display: inline-block;
+	padding: 40px;
+	margin: 16px;
+}
+
+.venueimage {
+	width: 100%;
+}
+
+
+.venueimagecontainer {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+	min-width:160px;
+}
+
+.imagetext {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0%;
+	font-size:1px;
+}
+
+.directions {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-radius: 32px;
+}

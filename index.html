@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Andy Molly Wedding</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> 
+	<script src="main.js"></script>
+	</head>
+	<body>
+		<h1 class ="starthidden" id="Hello">May-Harbron Wedding</h1>
+		<image class ="starthidden" src="mollyandandy.jpeg" width=50% />
+		<div class="starthidden mainbody">
+			<div class = "bottomborder">
+				<p>Hi we're Molly and Andy and we're getting married lolz. 23 July 2023. Be there or be square (but do RSVP either way, obviously)<p>
+			</div>
+			<div class = "bottomborder">
+				<h2>Venue</h2>
+				<p>We're getting married at <a href="https://sopleymill.co.uk/" target="_blank">Sopley Mill</a>.</p>
+				<p>The address is:</p>
+				<div class="directions">
+					<div class="address">
+						<p>Sopley Mill</p>
+						<p>Mill Lane</p>
+						<p>Nr Christchurch</p>
+						<p>Dorset</p>
+						<p>BH23 7AU</p>
+					</div>
+					<div class="mapouter" style="display:inline-block;vertical-align:middle;">
+							<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+							<!--<style>.mapouter{display:inline-block;position:relative;height:100px;width:100px;}</style>
+							<style>.gmap_canvas {overflow:hidden;background:none!important;height:100px;width:100px;}</style>-->
+					</div>
+				</div>
+				<p>See below for some cool snapsnaps</p>
+				<div class="venueimagecontainer">
+					<image class="venueimage" src="https://www.amazingspaceweddings.co.uk/uploads/sopley_mill/main-image-mill.jpg" />
+					<div class="imagetext">Sopley Mill</div>
+				</div>
+				<div class="venueimagecontainer">
+					<image class="venueimage" src="https://sopleymill.co.uk/wp-content/gallery/the-grounds-gallery/Sopley-Mill-Outside-front.jpg"></image>
+					<div class="imagetext">Sopley Mill again</div>
+				</div>
+				<div class="venueimagecontainer">
+					<image class="venueimage" src="https://www.wedinspire.com/wp-content/uploads/2019/01/Sopley-Mill-at-night.jpg"></image>
+					<div class="imagetext">Sopley Mill at night</div>
+				</div>
+				<br>
+				<div class="venueimagecontainer">
+					<image class="venueimage" src="https://www.etchingham-morris.co.uk/userfiles/images/Projects/Sopley%20Mill/Sopley-Mill-by-Rick-McEvoy-Photography-101117-027.jpg"></image>
+				</div>
+				<div class="venueimagecontainer">
+					<image class="venueimage" src="https://sopleymill.co.uk/wp-content/gallery/the-grounds-gallery/Sopley-Mill-Over-bridge.jpg"></image>
+				</div>
+				<div class="venueimagecontainer">
+					<image class="venueimage" src="https://www.wedinspire.com/wp-content/uploads/2020/03/Screenshot-2020-03-30-at-15.48.12.png"></image>
+				</div>
+			</div>
+			<br>
+			<div class = "bottomborder">
+				<h2>Food</h2>
+				<p>All food will be provided by the <a href="http://theperfectpig.co.uk/" target="_blank">Perfect Pig</a></p>
+				<image src="http://theperfectpig.co.uk/styles/logomob1.png" width: 25% />
+				<br>
+				<div id="canapes" class="menubox">
+					<h3>Canapes</h3>
+					<ul>
+						<li>Sosig</li>
+						<li>Spring rools</li>
+						<li>cum sammich</li>
+					</ul>
+				</div>
+				<div id="breakfast" class="menubox">
+					<h3>Breakfast</h3>
+					<ul>
+						<li>chimkin</li>
+					</ul>
+				</div>
+				<div id="evening" class="menubox">
+					<h3>Evening</h3>
+					<ul>
+						<li>pizza</li>
+					</ul>
+				</div>
+			</div>
+			<form action="submission.html" method="POST">
+				<h1 id="RSVP">RSVP</h1>
+				<label for="name">What's your name</label>
+				<input id="name" name="name" type="text">
+				<br>
+				<label for="attending">Can you attend?</label>
+				<input id="attending" name="attending" type="checkbox" value="attending">
+				<br>
+				<label for="diet">Dietary requirements?</label>
+				<input id="diet" name="diet" type="text">
+				<br>
+				<input type="submit">
+			</form>
+		</div>
+	</body>
+</html>
