@@ -97,7 +97,7 @@
 			<!--<form action="submission.html" method="POST">-->
 			<iframe
 				src="https://docs.google.com/forms/d/e/1FAIpQLSfRww-tzc_-UnwY4P5y7pXY0PtHNuoogAKkoNWFUG4LHowPEw/viewform?embedded=true"
-				width="80%" height="960" frameborder="0" marginheight="0" marginwidth="0">
+				width="640" height="960" frameborder="0" marginheight="0" marginwidth="0">
 				Loading…
 			</iframe>
 			<form action="mailto:andyh555@googlemail.com" method="get" enctype="text/plain">
