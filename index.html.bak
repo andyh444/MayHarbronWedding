@@ -61,7 +61,7 @@
 			<div class = "bottomborder">
 				<h2>Food</h2>
 				<p>All food will be provided by the <a href="http://theperfectpig.co.uk/" target="_blank">Perfect Pig</a></p>
-				<image src="http://theperfectpig.co.uk/styles/logomob1.png" width: 25% />
+				<image src="perfectpiglogo.png" width: 25% />
 				<br>
 				<div id="canapes" class="menubox">
 					<h3>Canapes</h3>
@@ -97,7 +97,7 @@
 			<!--<form action="submission.html" method="POST">-->
 			<iframe
 				src="https://docs.google.com/forms/d/e/1FAIpQLSfRww-tzc_-UnwY4P5y7pXY0PtHNuoogAKkoNWFUG4LHowPEw/viewform?embedded=true"
-				width="640" height="960" frameborder="0" marginheight="0" marginwidth="0">
+				width="80%" height="960" frameborder="0" marginheight="0" marginwidth="0">
 				Loading…
 			</iframe>
 			<form action="mailto:andyh555@googlemail.com" method="get" enctype="text/plain">
