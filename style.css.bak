@@ -5,13 +5,13 @@ body {
 }
 
 h1 {
-	font-family: "Lucida Handwriting";
+	font-family: Allura, "Lucida Handwriting",Cursive;
 	font-size: 64px;
 	color: #887694 /* dusty purple */
 }
 
 h2 {
-	font-family: "Lucida Handwriting";
+	font-family: Allura,"Lucida Handwriting",Cursive;
 	font-size: 32px;
 	color: #887694 /* dusty purple */
 }
@@ -20,6 +20,10 @@ td {
 	text-align: left;
 	margin: 10px;
 	padding: 10px;
+}
+
+p, ul {
+	font-family: Garamond, serif;
 }
 
 
@@ -31,7 +35,7 @@ td {
 	display: inline-block;
 	text-align: left;
 	width: 20%;
-	min-width: 128px;
+	min-width: 200px;
 }
 
 .starthidden {
@@ -42,6 +46,61 @@ td {
 	margin: 5%;
 }
 
+.bodyimage {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-radius: 50%;
+	width: 50vh;
+	height: 100%;
+
+	position:absolute;
+	top:0;
+}
+
+.left {
+	left:0;
+}
+
+.right {
+	right:0;
+}
+
+.bodyimagecontainer {
+	position: relative;
+	width:90vh;
+	height:50vh;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+}
+
+.textboxoverimage {
+	position:absolute;
+	top:0;
+	right:0;
+	background-color: rgba(255, 255, 255, 0.75);
+	top: 0px;
+	border-radius: 16px;
+	vertical-align: middle;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-radius: 50%;
+	width:50vh;
+	height: 100%;
+	
+}
+
+.textboxtext {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
 .border {
 	border-style: solid;
 	border-width: 1px;
@@ -50,10 +109,11 @@ td {
 
 .bottomborder {
 	border-bottom-style: solid;
-	border-width: 1px;
-	border-color: black;
+	border-bottom-width: 1px;
+	border-bottom-color: black;
 	margin: 2%;
 	padding: 5%;
+	min-height: 100vh;
 }
 
 .address {
@@ -93,4 +153,5 @@ td {
 	border-width: 1px;
 	border-color: black;
 	border-radius: 32px;
+	max-width:
 }

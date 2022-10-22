@@ -2,7 +2,6 @@ $(document).ready(function(){
 	setNoOfDays();
 	
 	elementFadeIn($('h1.starthidden'), 0);
-	elementFadeIn($('h2.starthidden'), 0);
 	elementFadeIn($('img.starthidden'), 100);
 	elementFadeIn($('div.starthidden'), 200);
 	//$("img").click(function(){

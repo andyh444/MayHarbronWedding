@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Andy and Molly</title>
-		<link rel="icon" type="image/x-icon" href="favicon.png">
+		<link rel="icon" type="image/x-icon" href="Images\favicon.png">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> 
@@ -12,16 +12,40 @@
 	<body>
 		<div class="bottomborder"> <!-- title -->
 			<h1 class ="starthidden" id="Hello">Andy & Molly</h1>
-			<image class ="starthidden" src="mollyandandy.jpeg" width=50% />
+			<image class ="starthidden" src="Images\mollyandandy.jpeg" width=50% />
 			<h1 class ="starthidden">23·07·2023</h1>
+			<h2 class ="starthidden"><span id="noOfDays">some amount of </span> days to go!</h2>
 		</div>
 		<div class="starthidden mainbody">
 			<div class = "bottomborder"> <!-- Intro -->
-				<h2>Introduction</h2>
-				<p>Hi we're Molly and Andy and we're getting married lolz. 23 July 2023. That's in <span id="noOfDays">some amount of </span> days. Be there or be square (but do RSVP either way, obviously)<p>
+				<h2>Intro</h2>
+				<div class="bodyimagecontainer">
+					<image class="bodyimage right" src="Images\AndyAndMolly1.jpg" />
+					<div class="textboxoverimage left">
+						<div class="textboxtext">
+							<p>We're getting married and you're invited!</p>
+						</div>
+					</div>
+				</div>
+				<div class="bodyimagecontainer">
+					<image class="bodyimage left" src="Images\main-image-mill uncropped.jpg" />
+					<div class="textboxoverimage right">
+						<div class="textboxtext">
+							<p>Ceremony at 2pm<br>followed by welcome drinks and photos</p>
+							<br>
+							<p>Sopley Mill</p>
+							<p>Mill Lane</p>
+							<p>Nr Christchurch</p>
+							<p>Dorset</p>
+							<p>BH23 7AU</p>
+						</div>
+					</div>
+					<div class="bodyimagecontainer">
+				</div>
 			</div>
+			
 			<div class = "bottomborder"> <!-- Venue -->
-				<h2>Venue</h2>
+				<h2>The Venue</h2>
 				<p>We're getting married at <a href="https://sopleymill.co.uk/" target="_blank">Sopley Mill</a>.</p>
 				<p>The address is:</p>
 				<div class="directions">
@@ -32,7 +56,7 @@
 						<p>Dorset</p>
 						<p>BH23 7AU</p>
 					</div>
-					<div class="mapouter" style="display:inline-block;vertical-align:middle;">
+					<div class="mapouter" style="display:inline-block;vertical-align:middle;border-style:solid;border-width:1px;border-radius:50%">
 							<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					</div>
 				</div>
@@ -68,7 +92,7 @@
 			<div class = "bottomborder"> <!-- Food -->
 				<h2>Food</h2>
 				<p>All food will be provided by the <a href="http://theperfectpig.co.uk/" target="_blank">Perfect Pig</a></p>
-				<image src="perfectpiglogo.png" width: 25% />
+				<image src="Images\perfectpiglogo.png" width: 25% />
 				<br>
 				<div id="canapes" class="menubox">
 					<h3>Canapes</h3>
