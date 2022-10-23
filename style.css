@@ -51,7 +51,7 @@ p, ul {
 	border-width: 1px;
 	border-color: black;
 	border-radius: 50%;
-	width: 50vh;
+	width: 40vh;
 	height: 100%;
 
 	position:absolute;
@@ -69,8 +69,8 @@ p, ul {
 .bodyimagecontainer {
 	position: relative;
 	width:80vw;
-	max-width:80vh;
-	height:50vh;
+	max-width:70vh;
+	height:40vh;
 	left: 50%;
 	transform: translate(-50%, 0);
 	margin: 10px;
@@ -93,8 +93,10 @@ p, ul {
 	border-radius:50%;
 	min-width:10px;
 	min-height:10px;
-	width:5vw;
-	height:5vw;
+	max-width: 128px;
+	max-height: 128px;
+	width:12vw;
+	height:12vw;
 	vertical-align:middle;
 	z-index:999;
 	cursor:pointer;
@@ -126,7 +128,7 @@ p, ul {
 	border-width: 1px;
 	border-color: black;
 	border-radius: 50%;
-	width:50vh;
+	width:40vh;
 	height: 100%;
 }
 
