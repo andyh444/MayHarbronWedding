@@ -2,6 +2,7 @@ $(document).ready(function(){
 	setNoOfDays();
 	
 	elementFadeIn($('h1.starthidden'), 0);
+	elementFadeIn($('h2.starthidden'), 0);
 	elementFadeIn($('img.starthidden'), 100);
 	elementFadeIn($('div.starthidden'), 200);
 	//$("img").click(function(){
@@ -16,6 +17,27 @@ $(document).ready(function(){
 	//$(".venueimagecontainer").click(function() {
 	//	$(this).animate({width: "50%"});
 	//});
+	$("#showMapButton").click(function() {
+		var textElement = document.getElementById("showMapText");
+		var elementOpacity;
+		if (textElement.innerHTML === "Show Map")
+		{
+			textElement.innerHTML = "Hide Map";
+			elementOpacity = '0%';
+		}
+		else
+		{
+			textElement.innerHTML = "Show Map";
+			elementOpacity = '100%';
+		}
+		//var myElements = document.getElementsByClassName('hideOnShowMap');
+		$('.hideOnShowMap').fadeToggle();
+		var myElements = $('.hideOnShowMap');
+		for (var i = 0; i < myElements.length; i++)
+		{
+			//($(myElements[i])).fadeToggle();
+		}
+	});
 });
 
 function imageAnimate(element,imageOpacity,textOpacity,textFontSize) {

@@ -28,8 +28,16 @@
 					</div>
 				</div>
 				<div class="bodyimagecontainer">
-					<image class="bodyimage left" src="Images\main-image-mill uncropped.jpg" />
-					<div class="textboxoverimage right">
+					<div class="map">
+							<iframe id="gmap_canvas" height="100%" width="100%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+					</div>
+					<div id="showMapButton">
+						<div id ="showMapText">Show Map</div>
+					</div>
+					<div class="hideOnShowMap" style="z-index:998;width:100%;height:100%;background-color:rgba(255,255,255,0.9)"/>
+					
+					<image class="hideOnShowMap bodyimage left" src="Images\main-image-mill uncropped.jpg" />
+					<div class="hideOnShowMap textboxoverimage right">
 						<div class="textboxtext">
 							<p>Ceremony at 2pm<br>followed by welcome drinks and photos</p>
 							<br>
@@ -40,7 +48,8 @@
 							<p>BH23 7AU</p>
 						</div>
 					</div>
-					<div class="bodyimagecontainer">
+					
+					
 				</div>
 			</div>
 			
@@ -56,8 +65,8 @@
 						<p>Dorset</p>
 						<p>BH23 7AU</p>
 					</div>
-					<div class="mapouter" style="display:inline-block;vertical-align:middle;border-style:solid;border-width:1px;border-radius:50%">
-							<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+					<div class="mapouter" style="">
+							<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					</div>
 				</div>
 				<p>See below for some cool snapsnaps</p>

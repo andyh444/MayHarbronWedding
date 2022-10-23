@@ -17,6 +17,21 @@ $(document).ready(function(){
 	//$(".venueimagecontainer").click(function() {
 	//	$(this).animate({width: "50%"});
 	//});
+	$("#showMapButton").click(function() {
+		var textElement = document.getElementById("showMapText");
+		var elementOpacity;
+		if (textElement.innerHTML === "Show Map")
+		{
+			textElement.innerHTML = "Hide Map";
+			elementOpacity = '0%';
+		}
+		else
+		{
+			textElement.innerHTML = "Show Map";
+			elementOpacity = '100%';
+		}
+		$('.hideOnShowMap').fadeToggle();
+	});
 });
 
 function imageAnimate(element,imageOpacity,textOpacity,textFontSize) {
