@@ -87,17 +87,16 @@ p, ul {
 .bodyimage {
 }
 
+
 .textboxoverimage {
 	background-color: rgba(255, 255, 255, 0.75);
 	vertical-align: middle;
-	font-size: 80%;
-	
 	
 }
 
 .bodyimagecontainer {
 	position: relative;
-	width:80vw;
+	width:90vw;
 	max-width:100vh;
 	height:55vh; /* if this changes, the width of .bodyimage and .textboxoverimage should change to the same amount */
 	max-height:50vw;
@@ -114,10 +113,10 @@ p, ul {
 	background-color:black;
 	color:white;
 	border-radius:50%;
-	min-width:10px;
-	min-height:10px;
-	max-width: 128px;
-	max-height: 128px;
+	min-width:32px;
+	min-height:32px;
+	max-width: 64px;
+	max-height: 64px;
 	width:12vw;
 	height:12vw;
 	vertical-align:middle;
@@ -155,9 +154,10 @@ p, ul {
 	color: black;
 
 	max-width:33%;
-	border-style: solid;
+	/* font size is set in main.js as it's resized based on parent element */
+	/*border-style: solid;
 	border-width: 1px;
-	border-color: black;
+	border-color: black;*/
 }
 
 

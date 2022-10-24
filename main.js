@@ -5,24 +5,37 @@ $(document).ready(function(){
 	elementFadeIn($('h2.starthidden'), 0);
 	elementFadeIn($('img.starthidden'), 100);
 	elementFadeIn($('div.starthidden'), 200);
-	//$("img").click(function(){
-	//	$(this).animate({opacity:'0',width:'0',margin:'50%'});
-	//});
 	$(".venueimagecontainer").mouseenter(function() {
 		imageAnimate($(this),50,100,16);
 	});
 	$(".venueimagecontainer").mouseleave(function() {
 		imageAnimate($(this),100,0,1);
 	});
-	//$(".venueimagecontainer").click(function() {
-	//	$(this).animate({width: "50%"});
-	//});
 	$("#showMapButton").click(function() {
 		toggleMapVisibility();
 	});
+	
+	setupFontResizing(document.getElementsByClassName("textboxoverimage"),0.05);
+	setupFontResizing([document.getElementById("showMapButton")],0.25);
 });
 
-function toggleMapVisibility(){
+function setupFontResizing(parentElements, ratio) {
+	var resizeObserver = new ResizeObserver((entries) =>
+	{
+		for (var i = 0; i < entries.length; i++)
+		{
+			var thisElement = entries[i].target;
+			var child = thisElement.firstElementChild;
+			child.style.fontSize = (ratio * thisElement.offsetWidth) + 'px';
+		}
+	})
+	for (var i = 0; i < parentElements.length; i++)
+	{
+		resizeObserver.observe(parentElements[i]);
+	}
+}
+
+function toggleMapVisibility() {
 	var textElement = document.getElementById("showMapText");
 		var elementOpacity;
 		if (textElement.innerHTML === "Show Map")
