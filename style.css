@@ -1,9 +1,15 @@
 body {
   background-color: rgb(255,255,255);
-  font-family: Rubik, Arial;
+  font-family: Nixie One, Garamond, serif;
+  font-weight: 600;
   text-align: center;
   margin-left:0;
   margin-right:0;
+}
+
+@font-face {
+    font-family: Gistesy;
+    src: url('Gistesy.ttf');
 }
 
 h1, h2 {
@@ -12,15 +18,11 @@ h1, h2 {
 }
 
 h1 {
-	font-family: Allura, "Lucida Handwriting",Cursive;
-	font-size: 64px;
-	color: #734d78 /* dusty purple */
+	font-size: 80px;
 }
 
 h2 {
-	font-family: Allura,"Lucida Handwriting",Cursive;
-	font-size: 32px;
-	color: #734d78 /* dusty purple */
+	font-size: 48px;
 }
 
 td {
@@ -28,11 +30,6 @@ td {
 	margin: 10px;
 	padding: 10px;
 }
-
-p, ul {
-	font-family: Garamond, serif;
-}
-
 
 .menubox {
 	margin-left: 20px;
@@ -102,7 +99,8 @@ p, ul {
 	max-height:50vw;
 	left: 50%;
 	transform: translate(-50%, 0);
-	margin: 2vw;
+	margin-top: 5vw;
+	margin-bottom: 5vw;
 }
 
 #showMapButton {
@@ -153,7 +151,7 @@ p, ul {
 	/*transform: translate(-25%, -50%);*/
 	color: black;
 
-	max-width:40%;
+	max-width:45%;
 	/* font size is set in main.js as it's resized based on parent element */
 	/*border-style: solid;
 	border-width: 1px;

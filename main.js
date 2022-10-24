@@ -37,20 +37,17 @@ function setupFontResizing(parentElements, ratio) {
 
 function toggleMapVisibility() {
 	var textElement = document.getElementById("showMapText");
-		var elementOpacity;
-		if (textElement.innerHTML === "Show Map")
-		{
-			textElement.innerHTML = "Hide Map";
-			$('.hideOnShowMap').fadeOut();
-			elementOpacity = '0%';
-		}
-		else
-		{
-			textElement.innerHTML = "Show Map";
-			$('.hideOnShowMap').fadeIn();
-			elementOpacity = '100%';
-		}
-		//$('.hideOnShowMap').fadeToggle();
+	$('.hideOnShowMap').stop();
+	if (textElement.innerHTML === "Show Map")
+	{
+		textElement.innerHTML = "Hide Map";
+		$('.hideOnShowMap').fadeOut();
+	}
+	else
+	{
+		textElement.innerHTML = "Show Map";
+		$('.hideOnShowMap').fadeIn();
+	}
 }
 
 function imageAnimate(element,imageOpacity,textOpacity,textFontSize) {
