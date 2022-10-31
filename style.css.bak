@@ -177,7 +177,7 @@ td {
 	background-image: url('Images\\hexagons3.png'), url('Images\\hexagonsleft.png');
 	background-repeat: repeat-y;
 	background-position: right, left;
-	background-size: 33%;
+	background-size: 25%;
 	color:white;
 }
 
