@@ -5,9 +5,11 @@
 		<link rel="icon" type="image/x-icon" href="Images\favicon.png">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nixie One'>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> 
 		<script src="main.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
 	</head>
 	<body>
 		<div class="bottomborder whitesection"> <!-- title -->
@@ -20,7 +22,6 @@
 			<div class = "bottomborder greensection">
 				<h2>Intro</h2>
 				<div class="bodyimagecontainer">
-					
 					<div class="textboxoverimage left">
 						<div class="textboxtext lefttextbox">
 							<p>We're getting married and you're invited!</p>
@@ -28,75 +29,29 @@
 					</div>
 					<image class="bodyimage right" src="Images\AndyAndMolly1.jpg" />
 				</div>
-				<div class="bodyimagecontainer">
-					<div class="map">
-							<iframe id="gmap_canvas" height="98%" width="98%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+					<div class="bodyimagecontainer">
+						<div class="map">
+						<iframe id="gmap_canvas" height="98%" width="98%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					</div>
 					<div id="showMapButton">
 						<div id ="showMapText">Show Map</div>
 					</div>
 					<div class="hideOnShowMap" style="z-index:998;width:100%;height:100%;background-color:rgba(114,150,109)">
 					</div>
-					<div class="hideOnShowMap textboxoverimage right">
-						<div class="textboxtext righttextbox">
-							<p>Ceremony at 2pm<br>followed by welcome drinks and photos</p>
-							<br>
-							<p style="margin:0;padding:0;">Sopley Mill</p>
-							<p style="margin:0;padding:0;">Mill Lane</p>
-							<p style="margin:0;padding:0;">Nr Christchurch</p>
-							<p style="margin:0;padding:0;">Dorset</p>
-							<p style="margin:0;padding:0;">BH23 7AU</p>
+						<div class="hideOnShowMap textboxoverimage right">
+							<div class="textboxtext righttextbox">
+								<p>Ceremony at 1pm</p>
+								<br>
+								<p style="margin:0;padding:0;">Sopley Mill</p>
+								<p style="margin:0;padding:0;">Mill Lane</p>
+								<p style="margin:0;padding:0;">Nr Christchurch</p>
+								<p style="margin:0;padding:0;">Dorset</p>
+								<p style="margin:0;padding:0;">BH23 7AU</p>
+							</div>
 						</div>
+						<image class="hideOnShowMap bodyimage left" src="Images\main-image-mill_uncropped.jpg" />
 					</div>
-					<image class="hideOnShowMap bodyimage left" src="Images\main-image-mill uncropped.jpg" />
-				</div>
 			</div>
-			
-			<div class = "bottomborder whitesection"> <!-- Venue -->
-				<h2>The Venue</h2>
-				<p>We're getting married at <a href="https://sopleymill.co.uk/" target="_blank">Sopley Mill</a>.</p>
-				<p>The address is:</p>
-				<div class="directions">
-					<div class="address">
-						<p>Sopley Mill</p>
-						<p>Mill Lane</p>
-						<p>Nr Christchurch</p>
-						<p>Dorset</p>
-						<p>BH23 7AU</p>
-					</div>
-					<div class="mapouter" style="">
-							<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-					</div>
-				</div>
-				<p>See below for some cool snapsnaps</p>
-				<div class="venueimagecontainer">
-					<image class="venueimage" src="https://www.amazingspaceweddings.co.uk/uploads/sopley_mill/main-image-mill.jpg" />
-					<div class="imagetext">Sopley Mill</div>
-				</div>
-				<div class="venueimagecontainer">
-					<image class="venueimage" src="https://sopleymill.co.uk/wp-content/gallery/the-grounds-gallery/Sopley-Mill-Outside-front.jpg"></image>
-					<div class="imagetext">Sopley Mill again</div>
-				</div>
-				<div class="venueimagecontainer">
-					<image class="venueimage" src="https://www.wedinspire.com/wp-content/uploads/2019/01/Sopley-Mill-at-night.jpg"></image>
-					<div class="imagetext">Sopley Mill at night</div>
-				</div>
-				<br>
-				<div class="venueimagecontainer">
-					<image class="venueimage" src="https://www.etchingham-morris.co.uk/userfiles/images/Projects/Sopley%20Mill/Sopley-Mill-by-Rick-McEvoy-Photography-101117-027.jpg"></image>
-				</div>
-				<div class="venueimagecontainer">
-					<image class="venueimage" src="https://sopleymill.co.uk/wp-content/gallery/the-grounds-gallery/Sopley-Mill-Over-bridge.jpg"></image>
-				</div>
-				<div class="venueimagecontainer">
-					<image class="venueimage" src="https://www.wedinspire.com/wp-content/uploads/2020/03/Screenshot-2020-03-30-at-15.48.12.png"></image>
-				</div>
-			</div>
-			<div class = "bottomborder greensection"> <!-- Accommodation -->
-				<h2>Where to stay</h2>
-				<p>I don't know, find a hotel or something</p>
-			</div>
-			<br>
 			<div class = "bottomborder whitesection"> <!-- Food -->
 				<h2>Food</h2>
 				<p>All food will be provided by the <a href="http://theperfectpig.co.uk/" target="_blank">Perfect Pig</a></p>
@@ -105,11 +60,11 @@
 				<div id="canapes" class="menubox">
 					<h3>Canapes</h3>
 					<ul>
-						<li>Chipolatas (GF)</li>
-						<li>Spring rolls (Vg)</li>
-						<li>Goat's cheese mini waffle cones (V)</li>
-						<li>Popcorn chicken</li>
-						<li>Crab scones</li>
+						<li>Chipolatas (GF)</li><br>
+						<li>Spring rolls (Vg)</li><br>
+						<li>Goat's cheese mini waffle cones (V)</li><br>
+						<li>Popcorn chicken</li><br>
+						<li>Crab scones</li><br>
 						<li>Stuffed new potatoes (V)</li>
 					</ul>
 				</div>
@@ -132,40 +87,60 @@
 					</ul>
 				</div>
 				<p>GF - gluten free, Vg - vegan, V - vegetarian</p>
+				<p>TODO: Mention alcohol</p>
 			</div>
-			<div class = "bottomborder greensection"> <!-- RSVP -->
+			
+			<div class = "bottomborder greensection"> <!-- Accommodation -->
+				<div style="min-height:33vh;">
+					<h2>Where to stay</h2>
+					<p>As Sopley Mill is on the edge of the New Forest, there is no shortage of places to stay in the area</p>
+					<p>Some handy nearby places are:</p>
+					<div class="menubox" style="width:40%">
+						<ul>
+							<li><a href="https://www.premierinn.com/gb/en/hotels/england/dorset/christchurch/christchurch-west.html?ARRdd=29&ARRmm=10&ARRyyyy=2022&NIGHTS=1&ROOMS=1&ADULT1=1&CHILD1=0&COT1=0&INTTYP1=DB&BRAND=PI&mckv=wzQL00L1_dc|pcrid|76003906438327|kword|premier%20inn%20christchurch|match|be|plid||pgrid|1216059966486568|ptaid|kwd-76003824678109:loc-188|&ef_id=a3348d190eca148908d1ee443106531d:G:s&s_kwcid=AL!9693!10!76003906438327!76003824678109&msclkid=a3348d190eca148908d1ee443106531d">Premier Inn Christchurch (West)</a> - 4 miles from the venue</li>
+							<li><a href="https://www.premierinn.com/gb/en/hotels/england/dorset/christchurch/christchurch-east.html?ARRdd=29&ARRmm=10&ARRyyyy=2022&NIGHTS=1&ROOMS=1&ADULT1=1&CHILD1=0&COT1=0&INTTYP1=DB&BRAND=PI&mckv=wzQL00L1_dc|pcrid|76003906438327|kword|premier%20inn%20christchurch|match|be|plid||pgrid|1216059966486568|ptaid|kwd-76003824678109:loc-188|&ef_id=a3348d190eca148908d1ee443106531d:G:s&s_kwcid=AL!9693!10!76003906438327!76003824678109&msclkid=a3348d190eca148908d1ee443106531d">Premier Inn Christchurch (East)</a> - 4 miles from the venue</li>
+							<li><a href="https://www.fishermanshauntdorset.co.uk/">The Fisherman's Haunt</a> - 1 mile from the venue</li>
+						</ul>
+					</div>
+				</div>
+				<div style="min-height:33vh;">
+					<h2>Parking</h2>
+					<p>Sopley mill has a car park on site.</p>
+					<p>You can leave your car overnight but make sure to pick it up by 11 am!</p>
+					<p>Unfortunately camper vans are not allowed overnight</p>
+					<div class="bodyimagecontainer" style="width:85vw;height:30vh;max-width:55vh;">
+						<div class="textboxoverimage left" style="width:30vh;">
+							<div class="textboxtext lefttextbox">
+								<p>There is ample parking on-site</p>
+								<p>Feel free to leave your car overnight, but please pick it up by 11 am</p>
+								<p>Unfortunately camper vans are not allowed overnight</p>
+							</div>
+						</div>
+						<image class="bodyimage right" style="width:30vh;" src="Images\ford fiesta.jpg" />
+					</div>
+				</div>
+				<div style="min-height:33vh;">
+					<h2>Gifts</h2>
+					<p>Give us all your cash.</p>
+					<div class="bodyimagecontainer" style="width:85vw;height:30vh;max-width:55vh;">
+						<div class="textboxoverimage right" style="width:30vh;">
+							<div class="textboxtext lefttextbox">
+								<p>We have too much stuff already</p>
+								<p>If you want to give us a gift, we are saving for our honeymoon</p>
+							</div>
+						</div>
+						<image class="bodyimage left" style="width:30vh;" src="Images\present.jpg" />
+					</div>
+				</div>
+			</div>
+			<div class = "bottomborder whitesection"> <!-- RSVP -->
+				<h2>RSVP</h2>
+				<p>Please enter your details in the form below, or send your RSVP to <a href="mailto:mayharbronwedding@gmail.com">mayharbronwedding@gmail.com</a></p>
 				<iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSfRww-tzc_-UnwY4P5y7pXY0PtHNuoogAKkoNWFUG4LHowPEw/viewform?embedded=true"
 					width="80%" height="960" frameborder="0" marginheight="0" marginwidth="0">
 					Loading…
 				</iframe>
-				<!--<form action="submission.html" method="POST">-->
-					<h1 id="RSVP">RSVP</h1>
-					<p>Enter your details below or let us know by <a href="mailto:andyh555@googlemail.com">email</a></p>
-					<table align="center">
-						<tr>
-							<td><label for="name">What's your name</label></td>
-							<td><input id="name" name="name" type="text"></td>
-						</tr>
-						<tr>
-							<td><label for="attending2">Can you attend?</label></td>
-							<td>
-								<input id="attendingYes" name="attending2" type="radio" value="Yes">
-								<label for="Yes">Yes</label>
-								<input id="attendingNo" name="attending2" type="radio" value="No">
-								<label for="No">No</label>
-							</td>
-						</tr>
-						<tr>
-							<td><label for="diet">Dietary requirements?</label></td>
-							<td><input id="diet" name="diet" type="text"></td>
-						</tr>
-						<tr>
-							<td><label for="comments">Comments</label></td>
-						</tr>
-					</table>
-					<input type="submit">
-				</form>
 			</div>
 		</div>
 	</body>

@@ -1,6 +1,7 @@
 body {
   background-color: rgb(255,255,255);
-  font-family: Rubik, Arial;
+  font-family: Nixie One, Garamond, serif;
+  font-weight: 600;
   text-align: center;
   margin-left:0;
   margin-right:0;
@@ -12,15 +13,11 @@ h1, h2 {
 }
 
 h1 {
-	font-family: Allura, "Lucida Handwriting",Cursive;
-	font-size: 64px;
-	color: #734d78 /* dusty purple */
+	font-size: 80px;
 }
 
 h2 {
-	font-family: Allura,"Lucida Handwriting",Cursive;
-	font-size: 32px;
-	color: #734d78 /* dusty purple */
+	font-size: 48px;
 }
 
 td {
@@ -28,11 +25,6 @@ td {
 	margin: 10px;
 	padding: 10px;
 }
-
-p, ul {
-	font-family: Garamond, serif;
-}
-
 
 .menubox {
 	margin-left: 20px;
@@ -102,7 +94,8 @@ p, ul {
 	max-height:50vw;
 	left: 50%;
 	transform: translate(-50%, 0);
-	margin: 2vw;
+	margin-top: 5vw;
+	margin-bottom: 5vw;
 }
 
 #showMapButton {
@@ -153,7 +146,7 @@ p, ul {
 	/*transform: translate(-25%, -50%);*/
 	color: black;
 
-	max-width:33%;
+	max-width:45%;
 	/* font size is set in main.js as it's resized based on parent element */
 	/*border-style: solid;
 	border-width: 1px;
@@ -181,44 +174,13 @@ p, ul {
 
 .greensection {
 	background-color: rgb(114,150,109);
+	background-image: url('Images\\hexagons3.png'), url('Images\\hexagonsleft.png');
+	background-repeat: repeat-y;
+	background-position: right, left;
+	background-size: 33%;
 	color:white;
 }
 
-.address {
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
-	border-radius: 64px;
-	vertical-align: middle;
-	display: inline-block;
-	padding: 40px;
-	margin: 16px;
-}
-
-.venueimage {
-	width: 100%;
-}
-
-
-.venueimagecontainer {
-	position: relative;
-	display: inline-block;
-	width: 25%;
-	min-width:160px;
-}
-
-.imagetext {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 0%;
-	font-size:1px;
-}
-
-.directions {
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
-	border-radius: 32px;
+.greensection h1, .greensection h2 {
+	color: white;
 }
