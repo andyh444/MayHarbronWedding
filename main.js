@@ -11,12 +11,13 @@ $(document).ready(function(){
 	$(".venueimagecontainer").mouseleave(function() {
 		imageAnimate($(this),100,0,1);
 	});
-	$("#showMapButton").click(function() {
+	/*$("#showMapButton").click(function() {
 		toggleMapVisibility();
-	});
+	});*/
 	
 	setupFontResizing(document.getElementsByClassName("textboxoverimage"),0.05);
 	setupFontResizing([document.getElementById("showMapButton")],0.25);
+	window.onscroll = function(){scroll()};
 });
 
 function setupFontResizing(parentElements, ratio) {
@@ -36,17 +37,33 @@ function setupFontResizing(parentElements, ratio) {
 }
 
 function toggleMapVisibility() {
-	var textElement = document.getElementById("showMapText");
+	var buttonElement = document.getElementById("showMapButton");
 	$('.hideOnShowMap').stop();
-	if (textElement.innerHTML === "Show Map")
+	if (buttonElement.dataset.state === "show")
 	{
-		textElement.innerHTML = "Hide Map";
+		buttonElement.dataset.state = "hide";
 		$('.hideOnShowMap').fadeOut();
+		newAnimationClass(document.getElementById("hideMapText"), "rotateToUpsideDownClass", "rotateFromUpsideDownClass"); 
+		newAnimationClass(document.getElementById("showMapText"), "rotateFromUpsideDownClass", "rotateToUpsideDownClass"); 
 	}
 	else
 	{
-		textElement.innerHTML = "Show Map";
+		buttonElement.dataset.state = "show";
 		$('.hideOnShowMap').fadeIn();
+		newAnimationClass(document.getElementById("hideMapText"), "rotateFromUpsideDownClass", "rotateToUpsideDownClass"); 
+		newAnimationClass(document.getElementById("showMapText"), "rotateToUpsideDownClass", "rotateFromUpsideDownClass"); 
+	}
+}
+
+function newAnimationClass(element, oldClass, newClass) {
+	//if (element.classList.contains(oldClass))
+	{
+		element.classList.remove(oldClass);
+	}
+	void element.offsetWidth; // trigger reflow
+	//if (!element.classList.contains(oldClass))
+	{
+		element.classList.add(newClass);
 	}
 }
 
@@ -71,4 +88,34 @@ function noOfDaysToGo() {
 	var targetDate = new Date('2023-07-23T00:00:01');
 	var diffInMs = targetDate - today;
 	return Math.ceil(diffInMs / (1000 * 3600 * 24));
+}
+
+function scroll() {
+	var scrollTop = document.documentElement.scrollTop;
+	var containers = document.getElementsByClassName("bodyimagecontainer");
+	for (var i = 0; i < containers.length; i++)
+	{
+		var rect = containers[i].getBoundingClientRect();
+		if (rect.top + rect.height >= 0.33 * rect.height
+			&& rect.top <= window.innerHeight - 0.33 * rect.height)
+		{
+			// inside the window
+			if (!containers[i].classList.contains("expandbodyimagecontainerclass"))
+			{
+				console.log("adding class");
+				newAnimationClass(containers[i],"contractbodyimagecontainerclass", "expandbodyimagecontainerclass");
+				console.log("added class");
+			}
+
+		}
+		else
+		{
+			if (!containers[i].classList.contains("contractbodyimagecontainerclass"))
+			{
+				console.log("remving class");
+				newAnimationClass(containers[i],"expandbodyimagecontainerclass", "contractbodyimagecontainerclass");
+				console.log("removed class");
+			}
+		}
+	}
 }

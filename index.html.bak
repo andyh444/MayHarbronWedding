@@ -6,16 +6,16 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nixie One'>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> 
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="main.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 	</head>
-	<body>
-		<div class="bottomborder whitesection"> <!-- title -->
+	<body id="body">
+		<div class="bottomborder whitesection" style="padding-left:0;padding-right:0;">
 			<h1 class ="starthidden" id="Hello">Andy & Molly</h1>
-			<image class ="starthidden" src="Images\mollyandandy.jpeg" style="width:75vw;max-width:80vh" />
-			<h1 class ="starthidden">23·07·2023</h1>
+			<image class ="starthidden" src="Images\AndyAndMolly3.png" style="width:100%;" />
+			<h1 class ="starthidden">23<sup>rd</sup> July 2023</h1>
 			<h2 class ="starthidden"><span id="noOfDays">some amount of </span> days to go!</h2>
 		</div>
 		<div class="starthidden mainbody">
@@ -33,8 +33,9 @@
 						<div class="map">
 						<iframe id="gmap_canvas" height="98%" width="98%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					</div>
-					<div id="showMapButton">
+					<div id="showMapButton" data-state="show" onclick="toggleMapVisibility()">
 						<div id ="showMapText">Show Map</div>
+						<div id ="hideMapText">Hide Map</div>
 					</div>
 					<div class="hideOnShowMap" style="z-index:998;width:100%;height:100%;background-color:rgba(114,150,109)">
 					</div>
@@ -138,7 +139,7 @@
 				<p>Please enter your details in the form below, or send your RSVP to <a href="mailto:mayharbronwedding@gmail.com">mayharbronwedding@gmail.com</a></p>
 				<iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSfRww-tzc_-UnwY4P5y7pXY0PtHNuoogAKkoNWFUG4LHowPEw/viewform?embedded=true"
-					width="80%" height="960" frameborder="0" marginheight="0" marginwidth="0">
+					width="100%" height="960" frameborder="0" marginheight="0" marginwidth="0">
 					Loading…
 				</iframe>
 			</div>

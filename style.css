@@ -3,8 +3,10 @@ body {
   font-family: Nixie One, Garamond, serif;
   font-weight: 600;
   text-align: center;
-  margin-left:0;
-  margin-right:0;
+  /*margin-left:0;
+  margin-right:0;*/
+  
+  margin:0;
 }
 
 h1, h2 {
@@ -26,6 +28,10 @@ td {
 	padding: 10px;
 }
 
+a {
+	text-decoration:none;
+}
+
 .menubox {
 	margin-left: 20px;
 	margin-right: 20px;
@@ -42,8 +48,8 @@ td {
 }
 
 .mainbody {
-	margin-top: 5%;
-	margin-bottom: 5%;
+	/*margin-top: 5%;
+	margin-bottom: 5%;*/
 }
 
 .left {
@@ -88,14 +94,42 @@ td {
 
 .bodyimagecontainer {
 	position: relative;
-	width:90vw;
-	max-width:100vh;
+	width:60vw;
+	max-width:66vh;
 	height:55vh; /* if this changes, the width of .bodyimage and .textboxoverimage should change to the same amount */
 	max-height:50vw;
 	left: 50%;
 	transform: translate(-50%, 0);
-	margin-top: 5vw;
-	margin-bottom: 5vw;
+	/*margin-top: 5vw;
+	margin-bottom: 5vw;*/
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+@keyframes expandBodyImageContainer {
+	from {
+		width:90vw;
+		max-width:100vh;
+	}
+	to {
+		width: 60vw;
+		max-width:66vh;
+	}
+}
+
+.contractbodyimagecontainerclass {
+	animation-name: expandBodyImageContainer;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-fill-mode: both;
+}
+
+.expandbodyimagecontainerclass {
+	animation-name: expandBodyImageContainer;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-direction:reverse;
+	animation-fill-mode: both;
 }
 
 #showMapButton {
@@ -117,7 +151,7 @@ td {
 	cursor:pointer;
 }
 
-#showMapText {
+#showMapText, #hideMapText {
 	position:absolute;
 	left:50%;
 	top:50%;
@@ -129,6 +163,49 @@ td {
 	border-top-width: 1px;
 	border-top-color: white;
 }
+
+
+
+#hideMapText {
+	opacity:0;
+}
+
+@keyframes rotateFromUpsideDown {
+  from {
+	  transform: translate(-50%,-50%) rotate(180deg);
+	  opacity:0;
+	  }
+  to {
+	  transform: translate(-50%,-50%) rotate(360deg);
+	  opacity:1;
+	  }
+}
+
+@keyframes rotateToUpsideDown {
+  from {
+	  transform: translate(-50%,-50%) rotate(0deg);
+	  opacity:1;
+	  }
+  to {
+	  transform: translate(-50%,-50%) rotate(180deg);
+	  opacity:0;
+	  }
+}
+
+.rotateFromUpsideDownClass {
+	animation-name: rotateFromUpsideDown;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-fill-mode: forwards;
+}
+
+.rotateToUpsideDownClass {
+	animation-name: rotateToUpsideDown;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-fill-mode: both;
+}
+
 
 .lefttextbox {
 	transform: translate(-80%, -50%);
@@ -161,14 +238,15 @@ td {
 }
 
 .whitesection, .greensection {
-	margin-top: 2%;
-	margin-bottom: 2%;
+	/*margin-top: 2%;
+	margin-bottom: 2%;*/
 	padding: 5%;
 	min-height: 100vh;
 }
 
 .whitesection {
 	background-color: white;
+	background-image: url('Images\\papertexture2.png');
 	color: black;
 }
 
