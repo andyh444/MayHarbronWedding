@@ -42,7 +42,8 @@ function toggleMapVisibility() {
 	if (buttonElement.dataset.state === "show")
 	{
 		buttonElement.dataset.state = "hide";
-		$('.hideOnShowMap').fadeOut();
+		$('.hideOnShowMap').fadeOut();//.css("display","none");
+		//$('.hideOnShowMap').css("display","none");
 		newAnimationClass(document.getElementById("hideMapText"), "rotateToUpsideDownClass", "rotateFromUpsideDownClass"); 
 		newAnimationClass(document.getElementById("showMapText"), "rotateFromUpsideDownClass", "rotateToUpsideDownClass"); 
 	}
@@ -56,12 +57,12 @@ function toggleMapVisibility() {
 }
 
 function newAnimationClass(element, oldClass, newClass) {
-	//if (element.classList.contains(oldClass))
+	if (element.classList.contains(oldClass))
 	{
 		element.classList.remove(oldClass);
 	}
 	void element.offsetWidth; // trigger reflow
-	//if (!element.classList.contains(oldClass))
+	if (!element.classList.contains(oldClass))
 	{
 		element.classList.add(newClass);
 	}
@@ -102,9 +103,7 @@ function scroll() {
 			// inside the window
 			if (!containers[i].classList.contains("expandbodyimagecontainerclass"))
 			{
-				console.log("adding class");
 				newAnimationClass(containers[i],"contractbodyimagecontainerclass", "expandbodyimagecontainerclass");
-				console.log("added class");
 			}
 
 		}
@@ -112,9 +111,7 @@ function scroll() {
 		{
 			if (!containers[i].classList.contains("contractbodyimagecontainerclass"))
 			{
-				console.log("remving class");
 				newAnimationClass(containers[i],"expandbodyimagecontainerclass", "contractbodyimagecontainerclass");
-				console.log("removed class");
 			}
 		}
 	}

@@ -32,29 +32,30 @@
 					</div>
 					<image class="bodyimage right" src="Images\AndyAndMolly1.jpg" />
 				</div>
-					<div class="bodyimagecontainer">
-						<div class="map">
-						<iframe id="gmap_canvas" height="98%" width="98%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+				<div style ="width:100%;height:70vh;position:relative;">
+					<div style="position:absolute;height:100%;width:100%;">
+						<iframe id="gmap_canvas" height="100%" width="100%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+					</div>
+					<div class="hideOnShowMap" style="position:absolute;width:100%;height:100%;background-color:rgba(114,150,109)"></div>
+					<div class="bodyimagecontainer hideOnShowMap" style="position:absolute;">
+						<div class="textboxoverimage right">
+							<div class="textboxtext righttextbox">
+								<p>Ceremony at 1pm</p>
+								<br>
+								<p style="margin:0;">Sopley Mill</p>
+								<p style="margin:0;">Mill Lane</p>
+								<p style="margin:0;">Nr Christchurch</p>
+								<p style="margin:0;">Dorset</p>
+								<p style="margin:0;">BH23 7AU</p>
+							</div>
+						</div>
+						<image class="bodyimage left" src="Images\main-image-mill_uncropped.jpg" />
 					</div>
 					<div id="showMapButton" data-state="show" onclick="toggleMapVisibility()">
 						<div id ="showMapText">Show Map</div>
 						<div id ="hideMapText">Hide Map</div>
 					</div>
-					<div class="hideOnShowMap" style="z-index:998;width:100%;height:100%;background-color:rgba(114,150,109)">
-					</div>
-						<div class="hideOnShowMap textboxoverimage right">
-							<div class="textboxtext righttextbox">
-								<p>Ceremony at 1pm</p>
-								<br>
-								<p style="margin:0;padding:0;">Sopley Mill</p>
-								<p style="margin:0;padding:0;">Mill Lane</p>
-								<p style="margin:0;padding:0;">Nr Christchurch</p>
-								<p style="margin:0;padding:0;">Dorset</p>
-								<p style="margin:0;padding:0;">BH23 7AU</p>
-							</div>
-						</div>
-						<image class="hideOnShowMap bodyimage left" src="Images\main-image-mill_uncropped.jpg" />
-					</div>
+				</div>
 			</div>
 			<div class = "bottomborder whitesection"> <!-- Food -->
 				<h2>Food</h2>

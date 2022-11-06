@@ -248,7 +248,7 @@ a {
 .whitesection, .firstwhitesection {
 	background-color: white;
 	color: black;
-	padding-top: 100px;
+	
 }
 
 .firstwhitesection {
@@ -264,6 +264,7 @@ a {
 	background-repeat: no-repeat, no-repeat, repeat;
 	background-position: top, bottom, 0% 0%;
 	background-size: 100%, 100%, 100%;
+	padding-top: 100px;
 }
 
 .greensection {
