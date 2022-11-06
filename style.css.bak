@@ -95,13 +95,14 @@ a {
 .bodyimagecontainer {
 	position: relative;
 	width:60vw;
-	max-width:100vh;
+	max-width:66vh;
 	height:55vh; /* if this changes, the width of .bodyimage and .textboxoverimage should change to the same amount */
 	max-height:50vw;
 	left: 50%;
 	transform: translate(-50%, 0);
 	/*margin-top: 5vw;
 	margin-bottom: 5vw;*/
+	
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
@@ -240,8 +241,8 @@ a {
 .whitesection, .greensection {
 	/*margin-top: 2%;
 	margin-bottom: 2%;*/
-	padding: 5%;
 	min-height: 100vh;
+	padding:1%;
 }
 
 .whitesection {
