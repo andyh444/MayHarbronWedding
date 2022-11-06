@@ -135,7 +135,7 @@ a {
 
 #showMapButton {
 	position: absolute;
-	bottom: 3px;
+	bottom: 20%;
 	left: 50%;
 	transform: translate(-50%, 0%);
 	background-color:black;

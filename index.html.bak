@@ -32,12 +32,12 @@
 					</div>
 					<image class="bodyimage right" src="Images\AndyAndMolly1.jpg" />
 				</div>
-				<div style ="width:100%;height:60vh;position:relative;">
+				<div style ="width:100%;height:70vh;position:relative;">
 					<div style="position:absolute;height:100%;width:100%;">
 						<iframe id="gmap_canvas" height="100%" width="100%" src="https://maps.google.com/maps?q=Sopley%20Mill,%20Mill%20Lane,%20Nr%20Christchurch,%20Dorset,%20BH23%207AU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					</div>
 					<div class="hideOnShowMap" style="position:absolute;width:100%;height:100%;background-color:rgba(114,150,109)"></div>
-					<div class="bodyimagecontainer hideOnShowMap" style="position:absolute;">
+					<div class="bodyimagecontainer hideOnShowMap" style="position:absolute;left:50%;top:25%;transform:translate(-50%,-50%)">
 						<div class="textboxoverimage right">
 							<div class="textboxtext righttextbox">
 								<p>Ceremony at 1pm</p>
