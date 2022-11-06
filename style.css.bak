@@ -135,7 +135,7 @@ a {
 
 #showMapButton {
 	position: absolute;
-	bottom: 30%;
+	bottom: 20%;
 	left: 50%;
 	transform: translate(-50%, 0%);
 	background-color:black;
@@ -163,12 +163,14 @@ a {
 	border-top-style: solid;
 	border-top-width: 1px;
 	border-top-color: white;
+	transition: transform 0.5s, opacity 0.5s;
 }
 
 
 
 #hideMapText {
-	opacity:0.01;
+	opacity:0;
+	transform:translate(-50%,-50%) rotate(180deg);
 }
 
 @keyframes rotateFromUpsideDown {

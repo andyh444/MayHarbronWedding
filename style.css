@@ -163,48 +163,12 @@ a {
 	border-top-style: solid;
 	border-top-width: 1px;
 	border-top-color: white;
+	transition: transform 0.5s, opacity 0.5s;
 }
-
-
 
 #hideMapText {
-	opacity:0.01;
-}
-
-@keyframes rotateFromUpsideDown {
-  from {
-	  transform: translate(-50%,-50%) rotate(180deg);
-	  opacity:0;
-	  }
-  to {
-	  transform: translate(-50%,-50%) rotate(360deg);
-	  opacity:1;
-	  }
-}
-
-@keyframes rotateToUpsideDown {
-  from {
-	  transform: translate(-50%,-50%) rotate(0deg);
-	  opacity:1;
-	  }
-  to {
-	  transform: translate(-50%,-50%) rotate(180deg);
-	  opacity:0;
-	  }
-}
-
-.rotateFromUpsideDownClass {
-	animation-name: rotateFromUpsideDown;
-	animation-duration:0.5s;
-	animation-iteration-count:1;
-	animation-fill-mode: forwards;
-}
-
-.rotateToUpsideDownClass {
-	animation-name: rotateToUpsideDown;
-	animation-duration:0.5s;
-	animation-iteration-count:1;
-	animation-fill-mode: both;
+	opacity:0;
+	transform:translate(-50%,-50%) rotate(180deg);
 }
 
 

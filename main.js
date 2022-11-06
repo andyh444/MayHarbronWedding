@@ -39,21 +39,30 @@ function setupFontResizing(parentElements, ratio) {
 function toggleMapVisibility() {
 	var buttonElement = document.getElementById("showMapButton");
 	$('.hideOnShowMap').stop();
+	var hideMapText = document.getElementById("hideMapText");
+	var showMapText = document.getElementById("showMapText");
+		
 	if (buttonElement.dataset.state === "show")
 	{
 		buttonElement.dataset.state = "hide";
-		$('.hideOnShowMap').fadeOut();//.css("display","none");
-		//$('.hideOnShowMap').css("display","none");
-		newAnimationClass(document.getElementById("hideMapText"), "rotateToUpsideDownClass", "rotateFromUpsideDownClass"); 
-		newAnimationClass(document.getElementById("showMapText"), "rotateFromUpsideDownClass", "rotateToUpsideDownClass"); 
+		$('.hideOnShowMap').fadeOut();
+		spinText(hideMapText, 1);
+		spinText(showMapText, 0);
 	}
 	else
 	{
 		buttonElement.dataset.state = "show";
 		$('.hideOnShowMap').fadeIn();
-		newAnimationClass(document.getElementById("hideMapText"), "rotateFromUpsideDownClass", "rotateToUpsideDownClass"); 
-		newAnimationClass(document.getElementById("showMapText"), "rotateToUpsideDownClass", "rotateFromUpsideDownClass"); 
+		spinText(hideMapText, 0);
+		spinText(showMapText, 1);
 	}
+}
+
+function spinText(element, opacity) {
+	var newSpin = parseInt(element.dataset.rotation) + 180;
+	element.style.transform="translate(-50%,-50%) rotate(" + newSpin + "deg)";
+	element.dataset.rotation=newSpin;
+	element.style.opacity = opacity;
 }
 
 function newAnimationClass(element, oldClass, newClass) {
