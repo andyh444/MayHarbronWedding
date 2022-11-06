@@ -238,18 +238,33 @@ a {
 	border-color: black;
 }
 
-.whitesection, .greensection {
+.firstwhitesection, .whitesection, .greensection {
 	/*margin-top: 2%;
 	margin-bottom: 2%;*/
 	min-height: 100vh;
 	padding:1%;
 }
 
-.whitesection {
+.whitesection, .firstwhitesection {
 	background-color: white;
-	background-image: url('Images\\papertexture2.png');
-	background-position: 0% 0%;
 	color: black;
+	
+}
+
+.firstwhitesection {
+	background-image: url('Images\\bottomTear.png'), url('Images\\papertexture2.png');
+	background-repeat: no-repeat, repeat;
+	background-position: bottom, 0% 0%;
+	background-size: 100%, 100%;
+
+}
+
+.whitesection {
+	background-image: url('Images\\topTear.png'), url('Images\\bottomTear.png'), url('Images\\papertexture2.png');
+	background-repeat: no-repeat, no-repeat, repeat;
+	background-position: top, bottom, 0% 0%;
+	background-size: 100%, 100%, 100%;
+	padding-top: 100px;
 }
 
 .greensection {
