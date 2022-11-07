@@ -1,0 +1,94 @@
+body {
+  background-color: rgb(50,50,50);
+  
+}
+
+.polaroidgroup {
+	display: grid;
+	place-items: center;
+	position: relative;
+	width:100%;
+}
+
+
+
+.polaroid:nth-child(1) {
+	left:400px;
+	bottom:20px;
+	transform: rotate(-3deg);
+	width: 180px;
+}
+
+.polaroid:nth-child(2) {
+	right:400px;
+	bottom:50px;
+	transform: rotate(-12deg);
+	width: 160px;
+}
+
+.polaroid:nth-child(3) {
+	transform: rotate(5deg);
+	width: 200px;
+}
+
+.polaroid {
+	aspect-ratio: 5/7;
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
+	background-color:white;
+	border-radius:3px;
+	position:absolute;
+	top: 200px;
+	transition: transform 500ms;
+	background-image:url('Images\\AndyAndMolly1.jpg');
+	background-repeat: no-repeat;
+	background-size: 80% 55%;
+	background-position: 20px 24px;
+	z-index:-1;
+}
+
+.polaroidimage {
+	width: 80%;
+	height: 55%;
+	transform: translate(20px, 24px);
+	
+}
+
+/*.polaroid:hover {
+	transform: rotate(0deg) scale(1.5, 1.5);
+	z-index:999;
+}*/
+
+.polaroidFlipTransition {
+	transform: rotate(0deg) scale(1.5, 1.5);
+}
+
+.polaroidFlipAnimation {
+	animation: polaroidClick;
+	animation-iteration-count: 1;
+	animation-duration: 250ms;
+	animation-fill-mode: both;
+}
+
+.polaroidFlipBackAnimation {
+	animation: polaroidClick;
+	animation-iteration-count: 1;
+	animation-duration: 250ms;
+	animation-direction: reverse;
+	animation-fill-mode: both;
+}
+
+@keyframes polaroidClick {
+	0% {
+		transform: rotate(0deg) scale(1.5);
+	}
+	50% {
+		transform: rotate(0deg) scale(0, 1.5);
+		
+	}
+
+	100% {
+		transform: rotate(0deg) scale(-1.5, 1.5);
+		box-shadow: -10px 10px 5px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
+		background-image: none;
+	}
+}

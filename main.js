@@ -27,7 +27,10 @@ function setupFontResizing(parentElements, ratio) {
 		{
 			var thisElement = entries[i].target;
 			var child = thisElement.firstElementChild;
-			child.style.fontSize = (ratio * thisElement.offsetWidth) + 'px';
+			for (var j = 0; j < thisElement.children.length; j++)
+			{
+				thisElement.children[j].style.fontSize = (ratio * thisElement.offsetWidth) + 'px';
+			}
 		}
 	})
 	for (var i = 0; i < parentElements.length; i++)
@@ -102,7 +105,7 @@ function noOfDaysToGo() {
 
 function scroll() {
 	var scrollTop = document.documentElement.scrollTop;
-	var containers = document.getElementsByClassName("bodyimagecontainer");
+	var containers = document.getElementsByClassName("big bodyimagecontainer");
 	for (var i = 0; i < containers.length; i++)
 	{
 		var rect = containers[i].getBoundingClientRect();
