@@ -9,15 +9,15 @@
 	<div class="polaroidgroup" >
 		<div class="polaroid" data-rotation="-3" onclick="polaroidClick(0)" onmouseenter="polaroidEnter(0)" onmouseleave="polaroidLeave(0)">
 			<image class="polaroidimage" src="Images\AndyAndMolly1.jpg" />
-			<div class="polaroidback">23rd July 2023</div>
+			<div class="polaroidback">Secret Message</div>
 		</div>
 		<div class="polaroid" data-rotation="-12" onclick="polaroidClick(1)" onmouseenter="polaroidEnter(1)" onmouseleave="polaroidLeave(1)">
 			<image class="polaroidimage" src="Images\AndyAndMolly1.jpg" />
-			<div class="polaroidback">23rd July 2023</div>
+			<div class="polaroidback">Secret Message2</div>
 		</div>
 		<div class="polaroid" data-rotation="5" onclick="polaroidClick(2)" onmouseenter="polaroidEnter(2)" onmouseleave="polaroidLeave(2)">
 			<image class="polaroidimage" src="Images\AndyAndMolly1.jpg" />
-			<div class="polaroidback">23rd July 2023</div>
+			<div class="polaroidback">Secret Message3</div>
 		</div>
 
 	</div>

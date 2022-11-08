@@ -12,8 +12,9 @@ function polaroidClick(number) {
 	}*/
 	
 	polaroid.style.transform = "rotate(0deg) scale(-1.5, 1.5)";
+	console.log(polaroid);
+	console.log(polaroid.children[0]);
 	polaroid.children[0].style.opacity = 0;
-	polaroid.children[1].style.opacity = 1;
 	//polaroid.style.opacity=0;
 	//polaroid.style.backgroundImage = "none";
 	
@@ -38,5 +39,4 @@ function polaroidLeave(number) {
 	polaroid.style.transform = "rotate(" + parseInt(polaroid.dataset.rotation) +  "deg) scale(1)";
 	polaroid.style.zIndex = -1;
 	polaroid.children[0].style.opacity = 1;
-	polaroid.children[1].style.opacity = 0;
 }
