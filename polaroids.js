@@ -4,7 +4,7 @@ function onload() {
 	{
 		covers[i].style.opacity=0;
 	}
-	allPolaroidsToOriginalPosition();
+	allPolaroidsToOriginalPosition(true);
 }
 
 function polaroidClick(number) {
@@ -45,14 +45,15 @@ function polaroidEnter(number) {
 			var distance = Math.sqrt(diffX * diffX + diffY * diffY);
 			var directionX = diffX / distance;
 			var directionY = diffY / distance;
-			polaroids[i].style.left = (left + 10 * directionX) + '%';
-			polaroids[i].style.top = (top + 10 * directionY) + '%';
 			
-			/*var leftAmount = 50.0 + ((i - number) * 50.0 / polaroids.length);
-			polaroids[i].style.left = leftAmount + '%';
+			// the closer the polaroid is to the active polaroid, the more it gets displaced
+			var amount = 10.0 * Math.pow(distance / 100, -0.5);
+			console.log(amount);
+			polaroids[i].style.left = (left + amount * directionX) + '%';
+			polaroids[i].style.top = (top + amount * directionY) + '%';
 			
-			var topAmount = (50.0 + ((number - i) * 50.0 / polaroids.length));
-			polaroids[i].style.top = topAmount + '%';*/
+			var rotation = parseInt(polaroids[i].dataset.rotation) + 30 * (Math.random()-0.5);
+			polaroids[i].style.transform = "rotate(" + rotation +  "deg) scale(1)";
 		}
 	}
 	
@@ -71,13 +72,18 @@ function polaroidLeave(number) {
 	polaroid.style.zIndex = -1;
 	polaroid.children[0].children[0].style.opacity = 1;
 	polaroid.children[0].children[1].style.opacity = 0;
-	allPolaroidsToOriginalPosition();
+	allPolaroidsToOriginalPosition(true);
 }
 
-function allPolaroidsToOriginalPosition() {
+function allPolaroidsToOriginalPosition(includeRotation) {
 	var polaroids = document.getElementsByClassName("polaroid");
 	for (var i = 0; i < polaroids.length; i++)
 	{
+		if (includeRotation === true)
+		{
+			polaroids[i].style.transform = "rotate(" + parseInt(polaroids[i].dataset.rotation) +  "deg) scale(1)";
+	
+		}
 		polaroids[i].style.left = polaroids[i].dataset.originalleft + '%';
 		polaroids[i].style.top = polaroids[i].dataset.originaltop + '%';
 	}
