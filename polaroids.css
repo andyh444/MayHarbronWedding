@@ -11,28 +11,29 @@ body {
 	display: grid;
 	place-items: center;
 	position: relative;
-	width:100%;
+	width:50%;
 }
 
 
 
 .polaroid:nth-child(1) {
-	left:400px;
+	left:40%;
 	bottom:20px;
 	transform: rotate(-3deg);
 	width: 180px;
 }
 
 .polaroid:nth-child(2) {
-	right:400px;
-	bottom:50px;
-	transform: rotate(-12deg);
-	width: 160px;
+	left:50%;
+	transform: rotate(5deg);
+	width: 200px;
 }
 
 .polaroid:nth-child(3) {
-	transform: rotate(5deg);
-	width: 200px;
+	left:60%;
+	bottom:50px;
+	transform: rotate(-12deg);
+	width: 160px;
 }
 
 .polaroid {
@@ -42,8 +43,9 @@ body {
 	border-radius:3px;
 	position:absolute;
 	top: 200px;
-	transition: transform 100ms;
-	transition-timing-function: linear;
+	transition: transform 250ms, left 1s;
+	transition-timing-function: cubic-bezier(0.33,0.2,0.66,0.8), ease-out; /* symmetrical, to work well with the opacity curve of the image/back */
+	/*transition-timing-function: linear;*/
 	/*background-image:url('Images\\AndyAndMolly1.jpg');
 	background-repeat: no-repeat;
 	background-size: 80% 55%;
@@ -51,22 +53,53 @@ body {
 	z-index:-1;
 }
 
-.polaroidimage, .polaroidback {
-	transition: opacity 100ms;
-	transition-timing-function: cubic-bezier(1,0,0,1);
+.polaroidimage, .polaroidimagecover {
+	width: 100%;
+	height: 100%;
+	position:absolute;
 }
 
-.polaroidimage {
+.polaroidimagecover {
+	background-color:black;
+	transition: opacity 3s;
+	transition-timing-function: ease-in;
+}
+
+.polaroidimagecontainer, .polaroidbackcontainer {
+	transition: opacity 250ms;
+	transition-timing-function: cubic-bezier(1,0,0,1); /* get this as close to a step as possible */
+}
+
+.polaroidcontainer {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.polaroidimagecontainer {
 	width: 80%;
 	height: 55%;
-	transform: translate(20px, 24px);
+	/*transform: translate(20px, 24px);*/
+	left:50%;
+	top:10%;
+	transform: translate(-50%, 0);
+	position:absolute;
+}
+
+.polaroidbackcontainer {
+	width:100%;
+	height:100%;
+	position:absolute;
+	opacity: 0;
 }
 
 .polaroidback {
-	opacity: 0;
 	font-family: permanentMarker;
+	font-size: 18px;
 	color: rgba(81,44,107,0.8);
-	transform: translate(-20px, -20px) rotate(30deg) scale(-1, 1);
+	position:absolute;
+	top:50%;
+	transform: translate(0%, -50%) rotate(30deg) scale(-1, 1);
 }
 
 /*.polaroid:hover {

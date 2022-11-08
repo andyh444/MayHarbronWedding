@@ -5,19 +5,43 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="polaroids.js"></script>
 	</head>
-	<body>
+	<body onload="onload()">
 	<div class="polaroidgroup" >
-		<div class="polaroid" data-rotation="-3" onclick="polaroidClick(0)" onmouseenter="polaroidEnter(0)" onmouseleave="polaroidLeave(0)">
-			<image class="polaroidimage" src="Images\AndyAndMolly1.jpg" />
-			<div class="polaroidback">Secret Message</div>
+		<div class="polaroid" data-originalleft="40%" data-rotation="-3" onclick="polaroidClick(0)" onmouseenter="polaroidEnter(0)" onmouseleave="polaroidLeave(0)">
+			<div class="polaroidcontainer">
+				<div class="polaroidimagecontainer">
+					<image class="polaroidimage"src="Images\AndyAndMolly1.jpg" />
+					<div class="polaroidimagecover">
+					</div>
+				</div>
+				<div class="polaroidbackcontainer">
+					<div class="polaroidback">"Happy on the Hill"<br>23rd July 2023</div>
+				</div>
+			</div>
 		</div>
-		<div class="polaroid" data-rotation="-12" onclick="polaroidClick(1)" onmouseenter="polaroidEnter(1)" onmouseleave="polaroidLeave(1)">
-			<image class="polaroidimage" src="Images\AndyAndMolly1.jpg" />
-			<div class="polaroidback">Secret Message2</div>
+		<div class="polaroid" data-originalleft="50%" data-rotation="5" onclick="polaroidClick(1)" onmouseenter="polaroidEnter(1)" onmouseleave="polaroidLeave(1)">
+			<div class="polaroidcontainer">
+				<div class="polaroidimagecontainer">
+					<image class="polaroidimage"src="Images\AndyAndMolly1.jpg" />
+					<div class="polaroidimagecover">
+					</div>
+				</div>
+				<div class="polaroidbackcontainer">
+					<div class="polaroidback">23rd July 2023</div>
+				</div>
+			</div>
 		</div>
-		<div class="polaroid" data-rotation="5" onclick="polaroidClick(2)" onmouseenter="polaroidEnter(2)" onmouseleave="polaroidLeave(2)">
-			<image class="polaroidimage" src="Images\AndyAndMolly1.jpg" />
-			<div class="polaroidback">Secret Message3</div>
+		<div class="polaroid" data-originalleft="60%" data-rotation="-12" onclick="polaroidClick(2)" onmouseenter="polaroidEnter(2)" onmouseleave="polaroidLeave(2)">
+			<div class="polaroidcontainer">
+				<div class="polaroidimagecontainer">
+					<image class="polaroidimage"src="Images\AndyAndMolly1.jpg" />
+					<div class="polaroidimagecover">
+					</div>
+				</div>
+				<div class="polaroidbackcontainer">
+					<div class="polaroidback">23rd July 2023</div>
+				</div>
+			</div>
 		</div>
 
 	</div>
