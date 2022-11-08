@@ -12,26 +12,30 @@ body {
 	place-items: center;
 	position: relative;
 	width:50%;
+	height:720px;
+	z-index:0;
+	
+	border-color:white;
+	border-width:1px;
+	border-style:solid;
 }
 
 
 
 .polaroid:nth-child(1) {
-	left:40%;
-	bottom:20px;
+
 	transform: rotate(-3deg);
 	width: 180px;
 }
 
 .polaroid:nth-child(2) {
-	left:50%;
+
 	transform: rotate(5deg);
 	width: 200px;
 }
 
 .polaroid:nth-child(3) {
-	left:60%;
-	bottom:50px;
+
 	transform: rotate(-12deg);
 	width: 160px;
 }
@@ -42,9 +46,11 @@ body {
 	background-color:white;
 	border-radius:3px;
 	position:absolute;
-	top: 200px;
-	transition: transform 250ms, left 1s;
-	transition-timing-function: cubic-bezier(0.33,0.2,0.66,0.8), ease-out; /* symmetrical, to work well with the opacity curve of the image/back */
+
+	left: 50%;
+	top: 0%;
+	transition: transform 250ms, left 500ms, top 500ms;
+	transition-timing-function: cubic-bezier(0.33,0.2,0.66,0.8), ease-out, ease-out; /* symmetrical, to work well with the opacity curve of the image/back */
 	/*transition-timing-function: linear;*/
 	/*background-image:url('Images\\AndyAndMolly1.jpg');
 	background-repeat: no-repeat;

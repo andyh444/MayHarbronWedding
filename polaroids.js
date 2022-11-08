@@ -4,6 +4,7 @@ function onload() {
 	{
 		covers[i].style.opacity=0;
 	}
+	allPolaroidsToOriginalPosition();
 }
 
 function polaroidClick(number) {
@@ -30,13 +31,28 @@ function polaroidClick(number) {
 
 function polaroidEnter(number) {
 	var polaroids = document.getElementsByClassName("polaroid");
+	var thisPolaroid = polaroids[number];
+	var thisleft = parseInt(thisPolaroid.dataset.originalleft);
+	var thistop = parseInt(thisPolaroid.dataset.originaltop);
 	for (var i = 0; i < polaroids.length; i++)
 	{
 		if (i != number)
 		{
-			var leftAmount = 50.0 + ((i - number) * 50.0 / polaroids.length);
-			console.log((i + 1) + ',' + polaroids.length);
+			var left = parseInt(polaroids[i].dataset.originalleft);
+			var top = parseInt(polaroids[i].dataset.originaltop);
+			var diffX = left - thisleft;
+			var diffY = top - thistop;
+			var distance = Math.sqrt(diffX * diffX + diffY * diffY);
+			var directionX = diffX / distance;
+			var directionY = diffY / distance;
+			polaroids[i].style.left = (left + 10 * directionX) + '%';
+			polaroids[i].style.top = (top + 10 * directionY) + '%';
+			
+			/*var leftAmount = 50.0 + ((i - number) * 50.0 / polaroids.length);
 			polaroids[i].style.left = leftAmount + '%';
+			
+			var topAmount = (50.0 + ((number - i) * 50.0 / polaroids.length));
+			polaroids[i].style.top = topAmount + '%';*/
 		}
 	}
 	
@@ -55,11 +71,14 @@ function polaroidLeave(number) {
 	polaroid.style.zIndex = -1;
 	polaroid.children[0].children[0].style.opacity = 1;
 	polaroid.children[0].children[1].style.opacity = 0;
+	allPolaroidsToOriginalPosition();
+}
+
+function allPolaroidsToOriginalPosition() {
+	var polaroids = document.getElementsByClassName("polaroid");
 	for (var i = 0; i < polaroids.length; i++)
 	{
-		if (i != number)
-		{
-		polaroids[i].style.left = polaroids[i].dataset.originalleft;
-		}
+		polaroids[i].style.left = polaroids[i].dataset.originalleft + '%';
+		polaroids[i].style.top = polaroids[i].dataset.originaltop + '%';
 	}
 }
