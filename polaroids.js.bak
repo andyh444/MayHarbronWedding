@@ -177,6 +177,7 @@ function polaroidLeave(number) {
 	
 	//polaroid.children[0].children[0].style.opacity = 1;
 	//polaroid.children[0].children[1].style.opacity = 0;
+	polaroid.dataset.status = "normal";
 	polaroid.children[0].children[0].dataset.status = "normal";
 	polaroid.children[0].children[1].dataset.status = "normal";
 	

@@ -104,6 +104,7 @@ function polaroidClick(number) {
 	else if (status === "zoomAndCentrePostFlip")
 	{
 		polaroid.dataset.status = "normal";
+		polaroidLeave(number);
 	}
 	console.log("new transform: " + polaroid.style.transform);
 	if (flipChildren === true)
