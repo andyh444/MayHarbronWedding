@@ -2,48 +2,12 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="polaroids.css">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Permanent Marker'>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="polaroids.js"></script>
 	</head>
-	<body onload="onload()">
+	<body >
 	<div class="polaroidgroup" >
-		<div class="polaroid" data-originalleft="40%" data-originaltop="40%" data-rotation="-3" onclick="polaroidClick(0)" onmouseenter="polaroidEnter(0)" onmouseleave="polaroidLeave(0)">
-			<div class="polaroidcontainer">
-				<div class="polaroidimagecontainer">
-					<image class="polaroidimage"src="Images\AndyAndMolly1.jpg" />
-					<div class="polaroidimagecover">
-					</div>
-				</div>
-				<div class="polaroidbackcontainer">
-					<div class="polaroidback">"Happy on the Hill"<br>23rd July '23</div>
-				</div>
-			</div>
-		</div>
-		<div class="polaroid" data-originalleft="50%" data-originaltop="20%" data-rotation="5" onclick="polaroidClick(1)" onmouseenter="polaroidEnter(1)" onmouseleave="polaroidLeave(1)">
-			<div class="polaroidcontainer">
-				<div class="polaroidimagecontainer">
-					<image class="polaroidimage"src="Images\AndyAndMolly1.jpg" />
-					<div class="polaroidimagecover">
-					</div>
-				</div>
-				<div class="polaroidbackcontainer">
-					<div class="polaroidback">23rd July 2023</div>
-				</div>
-			</div>
-		</div>
-		<div class="polaroid" data-originalleft="60%" data-originaltop="30%" data-rotation="-12" onclick="polaroidClick(2)" onmouseenter="polaroidEnter(2)" onmouseleave="polaroidLeave(2)">
-			<div class="polaroidcontainer">
-				<div class="polaroidimagecontainer">
-					<image class="polaroidimage"src="Images\AndyAndMolly1.jpg" />
-					<div class="polaroidimagecover">
-					</div>
-				</div>
-				<div class="polaroidbackcontainer">
-					<div class="polaroidback">23rd July 2023</div>
-				</div>
-			</div>
-		</div>
-
 	</div>
 	</body>
 </html>

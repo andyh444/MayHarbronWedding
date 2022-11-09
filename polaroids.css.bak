@@ -2,16 +2,16 @@ body {
   background-color: rgb(50,50,50);
 }
 
-@font-face {
+/*@font-face {
     font-family: permanentMarker;
     src: url(PermanentMarker-x99j.ttf);
-}
+}*/
 
 .polaroidgroup {
 	display: grid;
 	place-items: center;
 	position: relative;
-	width:50%;
+	width:100%;
 	height:720px;
 	z-index:0;
 	
@@ -20,42 +20,19 @@ body {
 	border-style:solid;
 }
 
-
-
-.polaroid:nth-child(1) {
-
-	transform: rotate(-3deg);
-	width: 180px;
-}
-
-.polaroid:nth-child(2) {
-
-	transform: rotate(5deg);
-	width: 200px;
-}
-
-.polaroid:nth-child(3) {
-
-	transform: rotate(-12deg);
-	width: 160px;
-}
-
 .polaroid {
 	aspect-ratio: 5/7;
-	box-shadow: 10px 10px 5px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
-	background-color:white;
-	border-radius:3px;
+	
 	position:absolute;
-
-	left: 50%;
+	width:200px;
+	left: 0%;
 	top: 0%;
-	transition: transform 250ms, left 1s, top 1s;
-	transition-timing-function: cubic-bezier(0.33,0.2,0.66,0.8), ease-out, ease-out; /* symmetrical, to work well with the opacity curve of the image/back */
-	/*transition-timing-function: linear;*/
-	/*background-image:url('Images\\AndyAndMolly1.jpg');
-	background-repeat: no-repeat;
-	background-size: 80% 55%;
-	background-position: 20px 24px;*/
+	/* animating left and top is not as performant as animating translate() but offers more */
+	transition: left 500ms, top 500ms;
+	transition-timing-function: ease-out, ease-out; 
+	/*transition: transform 500ms;
+	transition-timing-function: ease-out;*/
+	
 	z-index:-1;
 }
 
@@ -74,12 +51,19 @@ body {
 .polaroidimagecontainer, .polaroidbackcontainer {
 	transition: opacity 250ms;
 	transition-timing-function: cubic-bezier(1,0,0,1); /* get this as close to a step as possible */
+	
 }
 
 .polaroidcontainer {
 	width: 100%;
 	height: 100%;
 	position: relative;
+	background-color:white;
+	border-radius:3px;
+	transition: transform 250ms;
+	transition-timing-function: cubic-bezier(0.33,0.2,0.66,0.8); /* symmetrical, to work well with the opacity curve of the image/back */
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
+	
 }
 
 .polaroidimagecontainer {
@@ -100,7 +84,7 @@ body {
 }
 
 .polaroidback {
-	font-family: permanentMarker;
+	font-family: Permanent Marker;
 	font-size: 18px;
 	color: rgba(81,44,107,0.8);
 	position:absolute;
