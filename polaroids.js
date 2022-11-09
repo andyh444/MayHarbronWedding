@@ -24,10 +24,10 @@ function onload() {
 	var covers = document.getElementsByClassName("polaroidimagecover");
 	
 	
-	setTimeout(initialisePolaroids,100);
+	setTimeout(initialisePolaroidPositions,100);
 }
 
-function initialisePolaroids() {
+function initialisePolaroidPositions() {
 	var covers = document.getElementsByClassName("polaroidimagecover");
 	
 	for (var i = 0; i < covers.length; i++)
@@ -43,9 +43,11 @@ function createPolaroid(index, left, top, rotation, polaroidData) {
 	polaroidElement.dataset.originalleft = left;
 	polaroidElement.dataset.originaltop = top;
 	polaroidElement.dataset.rotation = rotation;
+	polaroidElement.dataset.status = "normal";
 
 	var containerElement = document.createElement('div');
 	containerElement.classList.add('polaroidcontainer');
+	
 	polaroidElement.appendChild(containerElement);
 	
 	var imagecontainerElement = document.createElement('div');
@@ -82,10 +84,42 @@ function polaroidClick(number) {
 		void polaroid.offsetWidth;
 		polaroid.classList.add("polaroidFlipAnimation");
 	}*/
-	
-	polaroid.children[0].style.transform = "rotate(0deg) scale(-1.5, 1.5)";
+	var status = polaroid.dataset.status;
+	var flipChildren = false;
+	polaroid.style.removeProperty("left");
+	polaroid.style.removeProperty("top");
+	if (status === "normal")
+	{
+		polaroid.dataset.status = "zoomAndCentre";
+	}
+	else if (status === "zoomAndCentre")
+	{
+		polaroid.dataset.status = "flip";
+		flipChildren = true;
+	}
+	else if (status === "flip")
+	{
+		polaroid.dataset.status = "zoomAndCentrePostFlip";
+	}
+	else if (status === "zoomAndCentrePostFlip")
+	{
+		polaroid.dataset.status = "normal";
+	}
+	console.log("new transform: " + polaroid.style.transform);
+	if (flipChildren === true)
+	{
+		polaroid.children[0].children[0].dataset.status = "flip";
+	    polaroid.children[0].children[1].dataset.status = "flip";
+	}
+	else
+	{
+		polaroid.children[0].children[0].dataset.status = "normal";
+	    polaroid.children[0].children[1].dataset.status = "normal";
+	}
+
+	/*polaroid.children[0].style.transform = "rotate(0deg) scale(-1.5, 1.5)";
 	polaroid.children[0].children[0].style.opacity = 0;
-	polaroid.children[0].children[1].style.opacity = 1;
+	polaroid.children[0].children[1].style.opacity = 1;*/
 	//polaroid.style.opacity=0;
 	//polaroid.style.backgroundImage = "none";
 	
@@ -140,8 +174,12 @@ function polaroidLeave(number) {
 
 	polaroid.children[0].style.transform = "rotate(" + parseInt(polaroid.dataset.rotation) +  "deg) scale(1)";
 	polaroid.style.zIndex = -1;
-	polaroid.children[0].children[0].style.opacity = 1;
-	polaroid.children[0].children[1].style.opacity = 0;
+	
+	//polaroid.children[0].children[0].style.opacity = 1;
+	//polaroid.children[0].children[1].style.opacity = 0;
+	polaroid.dataset.status = "normal";
+	polaroid.children[0].children[0].dataset.status = "normal";
+	polaroid.children[0].children[1].dataset.status = "normal";
 	
 }
 

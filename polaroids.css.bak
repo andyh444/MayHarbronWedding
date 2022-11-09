@@ -12,7 +12,7 @@ body {
 	place-items: center;
 	position: relative;
 	width:100%;
-	height:720px;
+	height:100vh;
 	z-index:0;
 	
 	border-color:white;
@@ -30,12 +30,14 @@ body {
 	left: 0%;
 	top: 0%;
 	/* animating left and top is not as performant as animating translate() but offers more */
-	transition: left 500ms, top 500ms;
-	transition-timing-function: ease-out, ease-out; 
+	/*transition: left 500ms, top 500ms, transform 250ms;
+	transition-timing-function: ease-out, ease-out, ease-out; */
+	transform: translate(-50%,-50%);
 	/*transition: transform 500ms;
 	transition-timing-function: ease-out;*/
 	
 	z-index:-1;
+
 }
 
 .polaroidimage, .polaroidimagecover {
@@ -54,7 +56,6 @@ body {
 .polaroidimagecontainer, .polaroidbackcontainer {
 	transition: opacity 250ms;
 	transition-timing-function: cubic-bezier(1,0,0,1); /* get this as close to a step as possible */
-	
 }
 
 .polaroidcontainer {
@@ -66,7 +67,18 @@ body {
 	transition: transform 250ms;
 	transition-timing-function: cubic-bezier(0.33,0.2,0.66,0.8); /* symmetrical, to work well with the opacity curve of the image/back */
 	box-shadow: 10px 10px 5px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
-	
+}
+
+.polaroid[data-status="zoomAndCentre"], .polaroid[data-status="zoomAndCentrePostFlip"] {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(0deg) scale(2);
+}
+
+.polaroid[data-status="flip"] {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(0deg) scale(-2, 2);
 }
 
 .polaroidimagecontainer {
@@ -77,6 +89,14 @@ body {
 	top:10%;
 	transform: translate(-50%, 0);
 	position:absolute;
+}
+
+.polaroidimagecontainer[data-status="flip"] {
+	opacity: 0;
+}
+
+.polaroidbackcontainer[data-status="flip"] {
+	opacity: 1;
 }
 
 .polaroidbackcontainer {
