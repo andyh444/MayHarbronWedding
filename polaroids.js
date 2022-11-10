@@ -74,62 +74,41 @@ function createPolaroid(index, left, top, rotation, polaroidData) {
 
 function polaroidClick(number) {
 	var polaroid = document.getElementsByClassName("polaroid")[number];
-	/*if (polaroid.classList.contains("polaroidFlipAnimation")){
-		polaroid.classList.remove("polaroidFlipAnimation");
-		void polaroid.offsetWidth;
-		polaroid.classList.add("polaroidFlipBackAnimation");
-	}
-	else {
-		polaroid.classList.remove("polaroidFlipBackAnimation");
-		void polaroid.offsetWidth;
-		polaroid.classList.add("polaroidFlipAnimation");
-	}*/
 	var status = polaroid.dataset.status;
-	var flipChildren = false;
 	polaroid.style.removeProperty("left");
 	polaroid.style.removeProperty("top");
-	if (status === "normal")
-	{
+	polaroid.children[0].style.removeProperty("transform");
+	if (status === "normal" || status === "hover") {
 		polaroid.dataset.status = "zoomAndCentre";
 	}
-	else if (status === "zoomAndCentre")
-	{
+	else if (status === "zoomAndCentre") {
 		polaroid.dataset.status = "flip";
-		flipChildren = true;
 	}
-	else if (status === "flip")
-	{
+	else if (status === "flip") {
 		polaroid.dataset.status = "zoomAndCentrePostFlip";
 	}
-	else if (status === "zoomAndCentrePostFlip")
-	{
+	else if (status === "zoomAndCentrePostFlip") {
 		polaroid.dataset.status = "normal";
 		polaroidLeave(number);
 	}
-	console.log("new transform: " + polaroid.style.transform);
-	if (flipChildren === true)
+	if (polaroid.dataset.status != "normal")
 	{
-		polaroid.children[0].children[0].dataset.status = "flip";
-	    polaroid.children[0].children[1].dataset.status = "flip";
+		$(".blackoverlay").fadeIn();
 	}
 	else
 	{
-		polaroid.children[0].children[0].dataset.status = "normal";
-	    polaroid.children[0].children[1].dataset.status = "normal";
+		$(".blackoverlay").fadeOut();
 	}
-
-	/*polaroid.children[0].style.transform = "rotate(0deg) scale(-1.5, 1.5)";
-	polaroid.children[0].children[0].style.opacity = 0;
-	polaroid.children[0].children[1].style.opacity = 1;*/
-	//polaroid.style.opacity=0;
-	//polaroid.style.backgroundImage = "none";
-	
-	
 }
 
 function polaroidEnter(number) {
 	var polaroids = document.getElementsByClassName("polaroid");
 	var thisPolaroid = polaroids[number];
+	if (thisPolaroid.dataset.status != "normal")
+	{
+		console.log(thisPolaroid.dataset.status);
+		return;
+	}
 	var thisleft = parseInt(thisPolaroid.dataset.originalleft);
 	var thistop = parseInt(thisPolaroid.dataset.originaltop);
 	for (var i = 0; i < polaroids.length; i++)
@@ -148,8 +127,11 @@ function polaroidEnter(number) {
 			var amount = 10.0 * Math.pow(distance / 100, -0.5);
 			console.log(amount);
 			
-			polaroids[i].style.left = (left + amount * directionX) + '%';
-			polaroids[i].style.top = (top + amount * directionY) + '%';
+			var thisLeft = left + amount * directionX;
+			var thisTop = top + amount * directionY;
+			
+			polaroids[i].style.left = "clamp(0%," + thisLeft + '%' + ",100%)";
+			polaroids[i].style.top = "clamp(0%," + thisTop + '%' + ",100%)";
 
 			//var newLeft = amount * directionX;
 			//var newTop = amount * directionY;
@@ -159,33 +141,29 @@ function polaroidEnter(number) {
 			polaroids[i].children[0].style.transform = "rotate(" + rotation +  "deg) scale(1)";
 		}
 	}
-	
-	var polaroid = polaroids[number];
-	
-	polaroid.children[0].style.transform = "rotate(0deg) scale(1.5)";
-	polaroid.style.zIndex = 999;
-
+	//thisPolaroid.children[0].style.transform = "rotate(0deg) scale(1.5)";
+	thisPolaroid.children[0].style.removeProperty("transform");
+	thisPolaroid.dataset.status = "hover";
 }
 
 function polaroidLeave(number) {
 	var polaroids = document.getElementsByClassName("polaroid");
-	allPolaroidsToOriginalPosition(true);
-	
 	var polaroid = polaroids[number];
+	if (polaroid.dataset.status === "hover" || polaroid.dataset.status === "normal")
+	{
+		allPolaroidsToOriginalPosition(true);
+		polaroid.children[0].style.transform = "rotate(" + parseInt(polaroid.dataset.rotation) +  "deg) scale(1)";
+		polaroid.dataset.status = "normal";
+	}
+}
 
-	polaroid.children[0].style.transform = "rotate(" + parseInt(polaroid.dataset.rotation) +  "deg) scale(1)";
-	polaroid.style.zIndex = -1;
-	
-	//polaroid.children[0].children[0].style.opacity = 1;
-	//polaroid.children[0].children[1].style.opacity = 0;
-	polaroid.dataset.status = "normal";
-	polaroid.children[0].children[0].dataset.status = "normal";
-	polaroid.children[0].children[1].dataset.status = "normal";
-	
+function blackoverlayclick() {
+	allPolaroidsToOriginalPosition(true);
 }
 
 function allPolaroidsToOriginalPosition(includeRotation) {
 	var polaroids = document.getElementsByClassName("polaroid");
+	$(".blackoverlay").fadeOut();
 	for (var i = 0; i < polaroids.length; i++)
 	{
 		if (includeRotation === true)
@@ -193,6 +171,7 @@ function allPolaroidsToOriginalPosition(includeRotation) {
 			polaroids[i].children[0].style.transform = "rotate(" + parseInt(polaroids[i].dataset.rotation) +  "deg) scale(1)";
 	
 		}
+		polaroids[i].dataset.status = "normal";
 		polaroids[i].style.left = polaroids[i].dataset.originalleft + '%';
 		polaroids[i].style.top = polaroids[i].dataset.originaltop + '%';
 		
