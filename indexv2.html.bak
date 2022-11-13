@@ -4,10 +4,13 @@
 		<title>Andy and Molly</title>
 		<link rel="icon" type="image/x-icon" href="Images\favicon.png">
 		<link rel="stylesheet" type="text/css" href="stylesv2.css">
+		<link rel="stylesheet" type="text/css" href="polaroids.css">
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nixie One'>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Permanent Marker'>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="mainv2.js"></script>
+		<script src="polaroids.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 	</head>
@@ -38,15 +41,20 @@
 			</div>
 		</div>
 		<div class="pages">
-			<div class="page">
+			<div class="page" data-activepage="true">
 				<p>Home</p>
 			</div>
-			<div class="page">
-				<p>Our story</p>
+			<div class="page" data-activepage="false">
+				<div class="polaroidgroup" >
+					<div class="blackoverlay" onclick="blackoverlayclick()">
+					</div>
+				</div>
 			</div>
-			<div class="page">
+			<div class="page" data-activepage="false">
+				<p>Wedding Info</p>
 			</div>
-			<div class="page">
+			<div class="page" data-activepage="false">
+				<p>RSVP</p>
 			</div>
 		</div>
 	</body>

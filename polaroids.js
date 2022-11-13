@@ -7,6 +7,11 @@ class PolaroidData {
 }
 
 function onload() {
+	initialisePolaroids();
+}
+
+function initialisePolaroids() {
+	console.log("initialising polaroids");
 	var groupElement = document.getElementsByClassName('polaroidgroup')[0];
 	const polaroidDataList = [new PolaroidData("AndyAndMollySmall.jpg", "Happy on the Hill", "23 July 23"),
 		new PolaroidData("image3.jpg", "Some waterfall somewhere", "31st Feb '86"),
@@ -18,13 +23,26 @@ function onload() {
 	{
 		var rotation = Math.round(60 * (Math.random() - 0.5));
 		console.log(rotation);
-		var element = createPolaroid(i, 80 * Math.random(), 50 * Math.random(), rotation, polaroidDataList[i]);
+		var element = createPolaroid(i, 20 + 60 * Math.random(), 20 + 60 * Math.random(), rotation, polaroidDataList[i]);
 		groupElement.appendChild(element);
 	}
 	var covers = document.getElementsByClassName("polaroidimagecover");
 	
 	
 	setTimeout(initialisePolaroidPositions,100);
+}
+
+function clearPolaroids() {
+	console.log("clearing polaroids");
+	var count = 10000;
+	
+	while (count > 0) {
+		var polaroids = document.getElementsByClassName('polaroid');
+		count = polaroids.length;
+		for (var i = 0; i < polaroids.length; i++) {
+			polaroids[i].parentNode.removeChild(polaroids[i]);
+		}
+	}
 }
 
 function initialisePolaroidPositions() {
