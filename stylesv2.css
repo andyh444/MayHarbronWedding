@@ -13,17 +13,26 @@ body {
 
 .title {
 	font-family: Allura;
-	color: #734d78;
+	color: rgb(255, 255, 255);/*#734d78;*/
+	text-shadow: -2px -2px 2px rgb(0,0,0,0.2);
 	position: absolute;
 	top: 0%;
 	font-size: min(8vw, 64px);
 	font-weight: bold;
-	width: 100%;
-	text-align: center;
 	transform: translate(0, -50%);
+	
 }
 
-.header, .headerItems {
+.date {
+	text-align: center;
+	margin: 0;
+	color: white;
+	font-family: Nixie One;
+	font-weight: 600;
+	padding-bottom: 2px;
+}
+
+.header, .headerItems, .date {
 	background-color: rgb(114,150,109);
 }
 
@@ -48,6 +57,7 @@ body {
 	width: 100%;
 	aspect-ratio: 3000 / 169;
 	z-index: 999;
+	margin-top: -1px; /* make sure there isn't a gap between the tear and the header */
 }
 
 .headerItems {
@@ -57,25 +67,35 @@ body {
 
 .headerItem {
 	display: inline-block;
-	margin: 0 20px;
+	margin: 20px 20px;
 	cursor: pointer;
 	font-family: Nixie One;
-	font-size: min(3vw, 36px);
+	font-size: min(4vw, 36px);
 	font-weight: 500;
 	color: white;
 	position: relative;
+	text-align: center;
 }
 
 .headerItem p {
 	margin: 2px;
 }
 
-.headerItem:hover, .headerItem[data-activepage="true"] {
+.headerItem:hover {
 	font-weight: 1000;
 }
 
+.headerItem[data-activepage="true"] {
+	text-shadow: 0 0 4px white;
+	transition: text-shadow 500ms;
+	font-weight: 1000;
+}
 
-.headerItem:hover .headerItemUnderline, .headerItem[data-activepage="true"] .headerItemUnderline {
+.headerItem[data-activepage="true"] .headerItemUnderline {
+	width: 90%;
+}
+
+.headerItem:hover .headerItemUnderline {
 	width: 100%;
 }
 
@@ -86,8 +106,9 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
-	transition: width 200ms;
+	transition: width 250ms;
 	border-radius: 1px;
+	box-shadow: 0 0 4px white;
 }
 
 .pages {
@@ -95,9 +116,11 @@ body {
 }
 
 .page {
-	border: solid red 1px;
 	min-height: 100vh;
 	display:none;
+	font-family: Nixie One;
+	font-weight: 600;
+	text-align: center;
 }
 
 .page[data-activepage="true"] {
