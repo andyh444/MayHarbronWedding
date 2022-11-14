@@ -34,15 +34,16 @@ function initialisePolaroids() {
 
 function clearPolaroids() {
 	console.log("clearing polaroids");
-	var count = 10000;
+	var count = 0;
 	
-	while (count > 0) {
+	do {
 		var polaroids = document.getElementsByClassName('polaroid');
 		count = polaroids.length;
 		for (var i = 0; i < polaroids.length; i++) {
 			polaroids[i].parentNode.removeChild(polaroids[i]);
 		}
 	}
+	while (count > 0);
 }
 
 function initialisePolaroidPositions() {
@@ -70,7 +71,7 @@ function createPolaroid(index, left, top, rotation, polaroidData) {
 	
 	var imagecontainerElement = document.createElement('div');
 	imagecontainerElement.classList.add('polaroidimagecontainer');
-	imagecontainerElement.innerHTML = "<image class='polaroidimage' src='Images\\" + polaroidData.imageFileName + "' />"
+	imagecontainerElement.innerHTML = "<image loading='lazy' class='polaroidimage' src='Images\\" + polaroidData.imageFileName + "' />"
 							+ "<div class='polaroidimagecover'>";
 	
 	containerElement.appendChild(imagecontainerElement);
