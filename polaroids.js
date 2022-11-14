@@ -29,7 +29,7 @@ function initialisePolaroids() {
 	var covers = document.getElementsByClassName("polaroidimagecover");
 	
 	
-	setTimeout(initialisePolaroidPositions,100);
+	setTimeout(initialisePolaroidPositions,500);
 }
 
 function clearPolaroids() {

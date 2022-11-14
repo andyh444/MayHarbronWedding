@@ -15,11 +15,28 @@ function headerItemClick(index) {
 		return;
 	}
 	
+	console.log(previousActiveIndex);
+	
+	var appearFromLeft = index > previousActiveIndex;
+	
 	// make all non active 
 	elements[previousActiveIndex].dataset.activepage = false;
-	pages[previousActiveIndex].dataset.activepage = false;
+	void pages[previousActiveIndex].offsetWidth;
+	if (index > previousActiveIndex) {
+		pages[previousActiveIndex].dataset.status = "disappearingToRight";
+	}
+	else {
+		pages[previousActiveIndex].dataset.status = "disappearingToLeft";
+	}
+	elements[index].dataset.activepage = true;
 	
-	setTimeout(
+	var animationDuration = 250; // this needs to be the same as in the css file
+	var scaledDuration = 1.1 * animationDuration;
+	console.log("original duration: " + animationDuration + ", scaled duration: " + scaledDuration);
+	// when animation has finished, make the previous page display hidden
+	setTimeout(function() {
+		pages[previousActiveIndex].dataset.status = "hidden";
+	}, scaledDuration);
 	console.log("prev active index: " + previousActiveIndex);
 	if (index != 1) {
 		clearPolaroids();
@@ -27,6 +44,16 @@ function headerItemClick(index) {
 	else if (previousActiveIndex != 1) {
 		initialisePolaroids();
 	}
+	void pages[index].offsetWidth;
+	setTimeout(function() {
+		if (index > previousActiveIndex) {
+			pages[index].dataset.status="activeFromLeft";
+		}
+		else {
+			pages[index].dataset.status="activeFromRight";
+		}
+		
+	},scaledDuration);
 }
 
 

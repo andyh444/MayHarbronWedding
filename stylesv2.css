@@ -3,6 +3,12 @@ body {
 	background-image: url('Images\\papertexture2.png');
 }
 
+h2 {
+	color: rgb(100, 100, 100);
+	font-family: Allura;
+	font-size: 36px;
+}
+
 .header {
 	width: 100%;
 	display: flex;
@@ -113,6 +119,7 @@ body {
 
 .pages {
 	width: 100%;
+	overflow: hidden;
 }
 
 .page {
@@ -122,32 +129,91 @@ body {
 	font-weight: 600;
 	text-align: center;
 	
-	animation-name: pageDisappear;
-	animation-duration: 1s;
+	
+	animation-duration: 250ms;
 	animation-iteration-count: 1;
-	animation-direction: forward;
 	animation-fill-mode: both;
+	animation-direction: forward;
+	
 }
 
-.page[data-activepage="true"] {
+.page[data-status="disappearingToRight"] {
+	transform-origin: 90% 5%;
+	animation-name: pageDisappearToRight;
+}
+
+.page[data-status="disappearingToLeft"] {
+	transform-origin: 10% 5%;
+	animation-name: pageDisappearToLeft;
+}
+
+.page[data-status="activeFromLeft"] {
 	/*display: inherit;*/
-	animation-name: pageAppear;
+	transform-origin: 50% 5%;
+	animation-name: pageAppearFromLeft;
 }
 
-@keyframes pageDisappear {
+.page[data-status="activeFromRight"] {
+	/*display: inherit;*/
+	transform-origin: 50% 5%;
+	animation-name: pageAppearFromRight;
+}
+
+.page[data-status="hidden"] {
+	display: none;
+}
+
+.menubox {
+	margin-left: 20px;
+	margin-right: 20px;
+	
+	vertical-align: top;
+	display: inline-block;
+	text-align: left;
+	width: 20%;
+	min-width: 200px;
+}
+
+@keyframes pageAppearFromLeft {
+	from {
+		opacity: 0;
+		transform: translate(-25%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes pageAppearFromRight {
+	from {
+		opacity: 0;
+		transform: translate(25%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes pageDisappearToLeft {
 	from {
 		opacity: 1;
+		transform: scale(1, 1);
 	}
 	to {
 		opacity: 0;
+		transform: scale(0.2, 1) skewY(5deg);
 	}
 }
 
-@keyframes pageAppear {
+@keyframes pageDisappearToRight {
 	from {
-		opacity: 0;
+		opacity: 1;
+		transform: scale(1, 1);
 	}
 	to {
-		opacity: 1;
+		opacity: 0;
+		transform: scale(0.2, 1) skewY(-5deg);
 	}
 }
