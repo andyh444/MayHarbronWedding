@@ -22,19 +22,19 @@
 		<p class="date">23<sup>rd</sup> July 2023</p>
 		<div class="stickyHeader">
 			<div class="headerItems">
-				<div class="headerItem" data-activepage="true" onclick="headerItemClick(0)">
+				<div class="headerItem" data-name="Home" data-activepage="false" onclick="headerItemClick(0)">
 					<p>Home</p>
 					<div class="headerItemUnderline"></div>
 				</div>
-				<div class="headerItem" data-activepage="false" onclick="headerItemClick(1)">
+				<div class="headerItem" data-name="OurStory" data-activepage="false" onclick="headerItemClick(1)">
 					<p>Our story</p>
 					<div class="headerItemUnderline"></div>
 				</div>
-				<div class="headerItem" data-activepage="false" onclick="headerItemClick(2)">
+				<div class="headerItem" data-name="WeddingInfo" data-activepage="false" onclick="headerItemClick(2)">
 					<p>Wedding Info</p>
 					<div class="headerItemUnderline"></div>
 				</div>
-				<div class="headerItem" data-activepage="false" onclick="headerItemClick(3)">
+				<div class="headerItem" data-name="RSVP" data-activepage="false" onclick="headerItemClick(3)">
 					<p>RSVP</p>
 					<div class="headerItemUnderline"></div>
 				</div>
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 		<div class="pages">
-			<div class="page" data-status="activeFromLeft">
+			<div class="page" data-status="hidden">
 				<p>Home</p>
 			</div>
 			<div class="page" data-status="hidden">
@@ -54,7 +54,10 @@
 				</div>
 			</div>
 			<div class="page" data-status="hidden">
-				<h2>Food</h2>
+				<div class="eucalyptusImageContainer" >
+					<image class="eucalyptusImage" src="Images\\Eucalyptus.png" />
+					<h2>Food</h2>
+				</div>
 				<p>All food will be provided by the <a href="http://theperfectpig.co.uk/" target="_blank">Perfect Pig</a></p>
 				<image src="Images\perfectpiglogo.png" width: 25% />
 				<br>
@@ -90,7 +93,10 @@
 				<p>GF - gluten free, Vg - vegan, V - vegetarian</p>
 				<p>TODO: Mention alcohol</p>
 				<br>
-				<h2>Where to stay</h2>
+				<div class="eucalyptusImageContainer" >
+					<image class="eucalyptusImage" src="Images\\Eucalyptus.png" />
+					<h2>Where to stay</h2>
+				</div>
 				<p>As Sopley Mill is on the edge of the New Forest, there is no shortage of places to stay in the area</p>
 				<p>Some handy nearby places are:</p>
 				<div class="menubox" style="width:40%">
@@ -101,11 +107,18 @@
 					</ul>
 				</div>
 				<br>
-				<h2>Parking</h2>
+				<div class="eucalyptusImageContainer" >
+					<image class="eucalyptusImage" src="Images\\Eucalyptus.png" />
+					<h2>Parking</h2>
+				</div>
 				<p>Sopley mill has a car park on site.</p>
 				<p>You can leave your car overnight but make sure to pick it up by 11 am!</p>
 				<p>Unfortunately camper vans are not allowed overnight</p>
-				<h2>Gifts</h2>
+				<br>
+				<div class="eucalyptusImageContainer" >
+					<image class="eucalyptusImage" src="Images\\Eucalyptus.png" />
+					<h2>Gifts</h2>
+				</div>
 				<p>Give us all your cash.</p>
 			</div>
 			<div class="page" data-status="hidden">

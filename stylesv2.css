@@ -4,9 +4,9 @@ body {
 }
 
 h2 {
-	color: rgb(100, 100, 100);
+	color: rgb(50, 50, 50);
 	font-family: Allura;
-	font-size: 36px;
+	font-size: 48px;
 }
 
 .header {
@@ -44,6 +44,7 @@ h2 {
 
 .headerImage {
 	width: 100px;
+	aspect-ratio: 1;
 	border: solid white 3px;
 	border-radius: 50%;
 }
@@ -172,6 +173,22 @@ h2 {
 	text-align: left;
 	width: 20%;
 	min-width: 200px;
+}
+
+.eucalyptusImageContainer {
+	position: relative;
+}
+
+.eucalyptusImage {
+	max-width: 600px;
+	width: 70%;
+}
+
+.eucalyptusImageContainer h2 {
+	position: absolute;
+	left: 50%;
+	bottom: 0%;
+	transform: translate(-50%, 0);
 }
 
 @keyframes pageAppearFromLeft {
