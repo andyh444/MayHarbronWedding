@@ -164,6 +164,43 @@ h2 {
 	display: none;
 }
 
+.VenueInfo {
+	display: inline-block;	
+	width: 100%;
+
+	position: relative;
+}
+
+.AddressBox {
+	/*background-color: rgb(255,255,255,0.5);*/
+	background-image: linear-gradient(to right, rgb(255, 255, 255, 0), white);
+	border-radius: 32px;
+
+	display: inline-block;	
+	vertical-align: middle;
+	width: clamp(300px, 49%, 600px);
+	height: 300px;
+	justify-content: center;
+	position: relative;
+}
+
+.AddressParagraphs {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.MapBox {
+	display: inline-block;	
+
+	vertical-align: top;
+
+	width: clamp(300px, 49%, 600px);
+	height: 300px;
+}
+
 .menubox {
 	margin-left: 20px;
 	margin-right: 20px;
@@ -177,6 +214,8 @@ h2 {
 
 .eucalyptusImageContainer {
 	position: relative;
+	margin-top: 50px;
+	margin-bottom: 70px;
 }
 
 .eucalyptusImage {
@@ -187,27 +226,30 @@ h2 {
 .eucalyptusImageContainer h2 {
 	position: absolute;
 	left: 50%;
-	bottom: 0%;
-	transform: translate(-50%, 0);
+	bottom: 0px;
+	transform: translate(-50%, 50%);
+
+	padding: 0;
+	margin: 0;
 }
 
 @keyframes pageAppearFromLeft {
-	from {
+	0% {
 		opacity: 0;
-		transform: translate(-25%, 0);
+		transform: translate(-25%, -10vw);
 	}
-	to {
+	100% {
 		opacity: 1;
 		transform: translate(0, 0);
 	}
 }
 
 @keyframes pageAppearFromRight {
-	from {
+	0% {
 		opacity: 0;
-		transform: translate(25%, 0);
+		transform: translate(25%, -10vw);
 	}
-	to {
+	100% {
 		opacity: 1;
 		transform: translate(0, 0);
 	}

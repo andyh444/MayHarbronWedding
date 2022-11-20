@@ -2,7 +2,8 @@ function bodyonload() {
 	window.addEventListener("hashchange", function(e) {
 		setPageFromURL();
 	});
-	
+
+	setNoOfDays();
 	setPageFromURL();
 }
 
@@ -81,4 +82,30 @@ function setPageFromURL() {
 		}
 	}
 	headerItemClick(0);
+}
+
+function setNoOfDays() {
+	const el = document.getElementById('numberOfDaysLabel');
+	const daysToGo = noOfDaysToGo();
+	var message;
+	if (daysToGo < 0) {
+		message = "It's happened already! What are you doing back here? :P";
+	}
+	else if (daysToGo == 0) {
+		message = "We're saying I do today!";
+	}
+	else if (daysToGo == 1) {
+		message = `We're saying I do tomorrow!`;
+	}
+	else {
+		message = `We're saying I do in ${daysToGo} days!`;
+	}
+	el.innerHTML = message;
+}
+
+function noOfDaysToGo() {
+	var today = new Date();
+	var targetDate = new Date('2023-07-23T00:00:01'); //'2023-07-23T00:00:01'
+	var diffInMs = targetDate - today; // gives a timespan in milliseconds
+	return Math.ceil(diffInMs / (1000 * 3600 * 24));
 }

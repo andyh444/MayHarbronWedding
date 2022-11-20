@@ -26,8 +26,7 @@ function initialisePolaroids() {
 		var element = createPolaroid(i, 20 + 60 * Math.random(), 20 + 60 * Math.random(), rotation, polaroidDataList[i]);
 		groupElement.appendChild(element);
 	}
-	var covers = document.getElementsByClassName("polaroidimagecover");
-	
+
 	
 	setTimeout(initialisePolaroidPositions,500);
 }
