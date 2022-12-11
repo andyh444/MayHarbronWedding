@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	background-image: url('Images\\papertexture2.png');
+	background-image: url('Images\\papertexture2.jpg');
 }
 
 h2 {
@@ -26,7 +26,6 @@ h2 {
 	font-size: min(8vw, 64px);
 	font-weight: bold;
 	transform: translate(0, -50%);
-	
 }
 
 .date {
@@ -36,6 +35,22 @@ h2 {
 	font-family: Nixie One;
 	font-weight: 600;
 	padding-bottom: 2px;
+}
+
+.InviteImage {
+	max-width: 450px;
+	width: 80vw;
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.5);
+	display: inline-block;
+	transform: rotate(-3deg);
+	margin: 32px;
+}
+
+.HomePageText {
+	display: inline-block;
+	vertical-align: top;
+	width: fit-content;
+	margin: 32px;
 }
 
 .header, .headerItems, .date {
@@ -171,9 +186,23 @@ h2 {
 	position: relative;
 }
 
+.AddressBoxBackground {
+	/*background-color: rgb(255,255,255,0.5);*/
+	background-image: url('Images\\main-image-mill.jpg');/*, linear-gradient(to right, rgb(255, 255, 255, 0), white);*/
+	background-size: cover;
+	background-position:center;
+	width: 100%;
+	height: 100%;
+	overflow: none;
+	opacity: 0.5;
+	border-radius: 32px;
+}
+
 .AddressBox {
 	/*background-color: rgb(255,255,255,0.5);*/
-	background-image: linear-gradient(to right, rgb(255, 255, 255, 0), white);
+	/*background-image: url('Images\\main-image-mill.jpg');/*, linear-gradient(to right, rgb(255, 255, 255, 0), white);*/
+	/*background-size: cover;
+	background-position:center;*/
 	border-radius: 32px;
 
 	display: inline-block;	
